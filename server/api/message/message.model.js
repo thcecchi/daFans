@@ -4,9 +4,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var MessageSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  message: String,
+  lat: Number,
+  lng: Number,
+  user: String
 });
 
 module.exports = mongoose.model('Message', MessageSchema);
