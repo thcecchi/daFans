@@ -37,8 +37,8 @@ angular.module('daFansApp')
        return Math.sqrt(dx * dx + dy * dy) <= km;
      }
 
-        var testLocation = { lat: 32.789674, lng: -79.947939 };
-        var userLocation = { lat: lat, lng: lng };
+        // var testLocation = { lat: 32.789674, lng: -79.947939 };
+        // var userLocation = { lat: lat, lng: lng };
 
         // var n = arePointsNear(vasteras, userLocation, 10);
         //
