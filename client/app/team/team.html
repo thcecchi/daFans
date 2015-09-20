@@ -14,21 +14,11 @@
       <h1 class="page-header">Teams:</h1>
       <div class="teamsList" ng-controller="TeamCtrl">
         <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="team in this.allTeams">
-          <li><a href="#">{{team.name}}</a></li>
+          <li><a href="#/team/{{team.name}}">{{team.name}}</a></li>
         </ul>
       </div>
     </div>
   </div>
-
-  <!-- <form class="message-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new message here." ng-model="newMessage">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addMessage()">Add New</button>
-      </span>
-    </p>
-  </form> -->
 </div>
 
 <footer class="footer">
