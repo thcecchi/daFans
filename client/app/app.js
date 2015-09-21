@@ -10,8 +10,8 @@ angular.module('daFansApp', [
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
-      .when('/team/:name', {
-          templateUrl: 'common/views/message.html',
+      .when('/team/:teamId', {
+          templateUrl: 'app/message/message.html',
           controller: 'MessageCtrl as message'
         })
       .otherwise({

@@ -13,9 +13,10 @@ angular.module('daFansApp')
       if($scope.newMessage === '') {
         return;
       }
+      console.log($geolocation.city)
       $http.post('/api/messages', { message: $scope.newMessage,
-                                    lat: $geolocation.lat,
-                                    lng: $geolocation.lng });
+                                    loc: //input city or lat/lng
+                                  });
       $scope.newMessage = '';
     };
 
