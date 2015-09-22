@@ -8,7 +8,7 @@
  */
 
 'use strict';
-
+var express = require('express');
 var _ = require('lodash');
 var Message = require('./message.model');
 
@@ -22,10 +22,14 @@ exports.index = function(req, res) {
 
 // Get a single message
 exports.show = function(req, res) {
-  Message.findById(req.params.id, function (err, message) {
+  // Message.findById(req.params.id, function (err, message) {
+  //   if(err) { return handleError(res, err); }
+  //   if(!message) { return res.status(404).send('Not Found'); }
+  //   return res.json(message);
+  // });
+  Message.find(function (err, messages) {
     if(err) { return handleError(res, err); }
-    if(!message) { return res.status(404).send('Not Found'); }
-    return res.json(message);
+    return res.status(200).json(messages);
   });
 };
 

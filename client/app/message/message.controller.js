@@ -1,12 +1,16 @@
 'use strict';
 
 angular.module('daFansApp')
-  .controller('MessageCtrl', function ($scope, $http, socket, $geolocation) {
+  .controller('MessageCtrl', function ($scope, $http, socket, $geolocation, $routeParams) {
     $scope.allMessages = [];
+    var thisTeam = $routeParams.teamId
 
-    $http.get('/api/messages').success(function(allMessages) {
+    console.log(thisTeam)
+
+    $http.get('/api/' + thisTeam).success(function(allMessages) {
       $scope.allMessages = allMessages;
       socket.syncUpdates('message', $scope.allMessages);
+      console.log(allMessages)
     });
 
     $scope.addMessage = function() {
@@ -15,7 +19,7 @@ angular.module('daFansApp')
       }
       console.log($geolocation.city)
       $http.post('/api/messages', { message: $scope.newMessage,
-                                    loc: //input city or lat/lng
+                                    loc: this//input city or lat/lng
                                   });
       $scope.newMessage = '';
     };

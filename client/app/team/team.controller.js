@@ -91,11 +91,11 @@ angular.module('daFansApp')
                 },
                 {
                   "name":"New York Giants",
-                  "teamId":"nyfbgiants"
+                  "teamId":"giants"
                 },
                 {
                   "name":"Philadelphia Eagles",
-                  "teamId":"eaglers"
+                  "teamId":"eagles"
                 },
                 {
                   "name":"Washington Redskins",
@@ -111,7 +111,7 @@ angular.module('daFansApp')
                 },
                 {
                   "name":"Oakland Raiders",
-                  "teamId":"ravens"
+                  "teamId":"raiders"
                 },
                 {
                   "name":"San Diego Chargers",
