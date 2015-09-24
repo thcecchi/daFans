@@ -7,6 +7,7 @@
 var message = require('./message.model');
 
 exports.register = function(socket) {
+  // console.log(message)
   message.schema.post('save', function (doc) {
     onSave(socket, doc);
   });

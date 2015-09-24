@@ -11,10 +11,10 @@ var router = express.Router();
 // })
 
 router.get('/', controller.index);
-router.get('/:id', controller.show);
+router.get('/:teamId', controller.show);
 router.post('/', controller.create);
-router.put('/:id', controller.update);
-router.patch('/:id', controller.update);
-router.delete('/:id', controller.destroy);
+router.put('/:teamId', controller.update);
+router.patch('/:teamId', controller.update);
+router.delete('/:teamId', controller.destroy);
 
 module.exports = router;

@@ -6,11 +6,20 @@
 
 var errors = require('./components/errors');
 var path = require('path');
+var express = require('express');
+var router = express.Router();
 
 module.exports = function(app) {
-
   // Insert routes below
   app.use('/api/:teamId', require('./api/message'));
+
+  app.param('teamId', function(req,res, next, id){
+    // console.log(id)
+    var thisTeam = id
+    return thisTeam
+    next();
+  })
+
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
