@@ -8,7 +8,6 @@
  */
 
 'use strict';
-var express = require('express');
 var _ = require('lodash');
 var Message = require('./message.model');
 

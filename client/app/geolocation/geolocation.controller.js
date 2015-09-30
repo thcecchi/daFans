@@ -11,7 +11,7 @@ angular.module('daFansApp')
           geo.lng = position.coords.longitude
 
           geoService.getLocationStats(geo.lat, geo.lng).success(function(data) {
-              $scope.city = data.results[0].address_components[3].short_name
+            $scope.city = data.results[0].address_components[3].short_name
           })
         })
 

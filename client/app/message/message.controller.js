@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('daFansApp')
-  .controller('MessageCtrl', function ($scope, $http, socket, $geolocation, $routeParams) {
+  .controller('MessageCtrl', function (geoService, $scope, $http, socket, $geolocation, $routeParams) {
     $scope.allMessages = [];
     var thisTeam = $routeParams.teamId
 
     console.log(thisTeam)
+
+
 
     $http.get('/api/' + thisTeam).success(function(allMessages) {
       $scope.allMessages = allMessages;

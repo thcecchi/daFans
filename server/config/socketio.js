@@ -18,6 +18,38 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/viking/viking.socket').register(socket);
+  require('../api/titan/titan.socket').register(socket);
+  require('../api/texan/texan.socket').register(socket);
+  require('../api/steeler/steeler.socket').register(socket);
+  require('../api/seahawk/seahawk.socket').register(socket);
+  require('../api/saint/saint.socket').register(socket);
+  require('../api/redskin/redskin.socket').register(socket);
+  require('../api/raven/raven.socket').register(socket);
+  require('../api/ram/ram.socket').register(socket);
+  require('../api/raider/raider.socket').register(socket);
+  require('../api/patriot/patriot.socket').register(socket);
+  require('../api/panther/panther.socket').register(socket);
+  require('../api/packer/packer.socket').register(socket);
+  require('../api/niner/niner.socket').register(socket);
+  require('../api/lion/lion.socket').register(socket);
+  require('../api/jet/jet.socket').register(socket);
+  require('../api/jaguar/jaguar.socket').register(socket);
+  require('../api/giant/giant.socket').register(socket);
+  require('../api/falcon/falcon.socket').register(socket);
+  require('../api/eagle/eagle.socket').register(socket);
+  require('../api/dolphin/dolphin.socket').register(socket);
+  require('../api/cowboy/cowboy.socket').register(socket);
+  require('../api/colt/colt.socket').register(socket);
+  require('../api/chief/chief.socket').register(socket);
+  require('../api/charger/charger.socket').register(socket);
+  require('../api/cardinal/cardinal.socket').register(socket);
+  require('../api/buccaneer/buccaneer.socket').register(socket);
+  require('../api/brown/brown.socket').register(socket);
+  require('../api/bronco/bronco.socket').register(socket);
+  require('../api/bill/bill.socket').register(socket);
+  require('../api/bear/bear.socket').register(socket);
+  require('../api/bengal/bengal.socket').register(socket);
   require('../api/message/message.socket').register(socket);
 }
 

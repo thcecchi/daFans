@@ -10,7 +10,7 @@ angular.module('daFansApp')
                   "teamId":"ravens"
                 },
                 {
-                  "name":"Cincincatti Bengals",
+                  "name":"Cincinatti Bengals",
                   "teamId":"bengals"
                 },
                 {
