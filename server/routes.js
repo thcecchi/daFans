@@ -44,7 +44,7 @@ module.exports = function(app) {
   app.use('/api/bills', require('./api/bill'));
   app.use('/api/bears', require('./api/bear'));
   app.use('/api/bengals', require('./api/bengal'));
-  app.use('/api/:teamId', require('./api/message'));
+  // app.use('/api/:teamId', require('./api/message'));
 
 
   app.use('/api/users', require('./api/user'));

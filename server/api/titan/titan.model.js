@@ -4,9 +4,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var TitanSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  message: String,
+  loc: String,
+  user: String
 });
 
 module.exports = mongoose.model('Titan', TitanSchema);

@@ -5,8 +5,7 @@ var mongoose = require('mongoose'),
 
 var BengalSchema = new Schema({
   message: String,
-  lat: Number,
-  lng: Number,
+  loc: String,
   user: String
 });
 

@@ -1,4 +1,10 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
+
+<div id="loading-screen">
+  <p>
+    Loading...
+  </p>
+</div>
 
 <header class="hero-unit" id="banner">
   <div class="container">
@@ -11,10 +17,9 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Teams:</h1>
       <div class="teamsList" ng-controller="TeamCtrl">
         <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="team in this.allTeams">
-          <li><a href="/team/{{team.teamId}}">{{team.name}}</a></li>
+          <li><a href="/team/{{team.teamId}}"><img class="team-logo" src="assets/nfl_logos/{{team.img}}" alt="{{team.teamId}}"></a></li>
         </ul>
       </div>
     </div>

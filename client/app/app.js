@@ -48,7 +48,7 @@ angular.module('daFansApp', [
     };
   })
 
-  .run(function ($rootScope, $location, Auth) {
+  .run(function ($rootScope, $location, Auth, $geolocation, geoService) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
@@ -58,4 +58,19 @@ angular.module('daFansApp', [
         }
       });
     });
+
+// Get user's location
+    $geolocation.getCurrentPosition({
+      timeout: 60000
+    }).then(function(position) {
+          var lat = position.coords.latitude
+          var lng = position.coords.longitude
+
+          geoService.getLocationStats(lat, lng).success(function(data) {
+            $("#loading-screen").addClass('hide')
+            $rootScope.city = data.results[0].address_components[3].short_name
+            console.log($rootScope.city)
+          })
+        })
+
   });

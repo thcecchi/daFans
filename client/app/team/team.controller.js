@@ -1,139 +1,177 @@
 'use strict';
 
 angular.module('daFansApp')
-  .controller('TeamCtrl', function ($scope, $http, socket, $geolocation, $routeParams) {
+  .controller('TeamCtrl', function ($scope, $rootScope, $http, socket, $geolocation, $routeParams) {
     $scope.message = 'Hello';
+
+    var check4Teams = function() {
+      if ($rootScope.city != undefined) {
+        $("#loading-screen").addClass('hide')
+      }
+    }
 
     $scope.allTeams = [
                 {
                   "name":"Baltimore Ravens",
-                  "teamId":"ravens"
+                  "teamId":"ravens",
+                  "img": "ravens.svg"
                 },
                 {
                   "name":"Cincinatti Bengals",
-                  "teamId":"bengals"
+                  "teamId":"bengals",
+                  "img": "bengals.svg"
                 },
                 {
                   "name":"Cleveland Browns",
-                  "teamId":"browns"
+                  "teamId":"browns",
+                  "img": "browns.svg"
                 },
                 {
                   "name":"Pittsburgh Steelers",
-                  "teamId":"steelers"
+                  "teamId":"steelers",
+                  "img": "steelers.svg"
                 },
                 {
                   "name":"Chicago Bears",
-                  "teamId":"bears"
+                  "teamId":"bears",
+                  "img": "bears.svg"
                 },
                 {
                   "name":"Detroit Lions",
-                  "teamId":"lions"
+                  "teamId":"lions",
+                  "img": "lions.svg"
                 },
                 {
                   "name":"Green Bay Packers",
-                  "teamId":"pakers"
+                  "teamId":"packers",
+                  "img": "packers.svg"
                 },
                 {
                   "name":"Minnesota Vikings",
-                  "teamId":"vikings"
+                  "teamId":"vikings",
+                  "img": "vikings.svg"
                 },
                 {
                   "name":"Houston Texans",
-                  "teamId":"texans"
+                  "teamId":"texans",
+                  "img": "texans.svg"
                 },
                 {
                   "name":"Indianapolis Colts",
-                  "teamId":"colts"
+                  "teamId":"colts",
+                  "img": "colts.svg"
                 },
                 {
                   "name":"Jacksonville Jaguars",
-                  "teamId":"jaguars"
+                  "teamId":"jaguars",
+                  "img": "jaguars.png"
                 },
                 {
                   "name":"Tennessee Titans",
-                  "teamId":"titans"
+                  "teamId":"titans",
+                  "img": "titans.svg"
                 },
                 {
                   "name":"Atlanta Falcons",
-                  "teamId":"falcons"
+                  "teamId":"falcons",
+                  "img": "falcons.svg"
                 },
                 {
                   "name":"Carolina Panthers",
-                  "teamId":"panthers"
+                  "teamId":"panthers",
+                  "img": "panthers.svg"
                 },
                 {
                   "name":"New Orleans Saints",
-                  "teamId":"saints"
+                  "teamId":"saints",
+                  "img": "saints.svg"
                 },
                 {
                   "name":"Tampa Bay Buccaneers",
-                  "teamId":"bucs"
+                  "teamId":"bucs",
+                  "img": "buccaneers.svg"
                 },
                 {
                   "name":"Buffalo Bills",
-                  "teamId":"bills"
+                  "teamId":"bills",
+                  "img": "bills.svg"
                 },
                 {
                   "name":"Miami Dolphins",
-                  "teamId":"dolphins"
+                  "teamId":"dolphins",
+                  "img": "dolphins.svg"
                 },
                 {
                   "name":"New England Patriots",
-                  "teamId":"patriots"
+                  "teamId":"patriots",
+                  "img": "patriots.svg"
                 },
                 {
                   "name":"New York Jets",
-                  "teamId":"jets"
+                  "teamId":"jets",
+                  "img": "jets.svg"
                 },
                 {
                   "name":"Dallas Cowboys",
-                  "teamId":"cowboys"
+                  "teamId":"cowboys",
+                  "img": "cowboys.svg"
                 },
                 {
                   "name":"New York Giants",
-                  "teamId":"giants"
+                  "teamId":"giants",
+                  "img": "giants.svg"
                 },
                 {
                   "name":"Philadelphia Eagles",
-                  "teamId":"eagles"
+                  "teamId":"eagles",
+                  "img": "eagles.svg"
                 },
                 {
                   "name":"Washington Redskins",
-                  "teamId":"redkins"
+                  "teamId":"redskins",
+                  "img": "redskins.svg"
                 },
                 {
                   "name":"Denver Broncos",
-                  "teamId":"broncos"
+                  "teamId":"broncos",
+                  "img": "broncos.svg"
                 },
                 {
                   "name":"Kansas City Chiefs",
-                  "teamId":"chiefs"
+                  "teamId":"chiefs",
+                  "img": "chiefs.svg"
                 },
                 {
                   "name":"Oakland Raiders",
-                  "teamId":"raiders"
+                  "teamId":"raiders",
+                  "img": "raiders.svg"
                 },
                 {
                   "name":"San Diego Chargers",
-                  "teamId":"chargers"
+                  "teamId":"chargers",
+                  "img": "chargers.svg"
                 },
                 {
                   "name":"Arizona Cardinals",
-                  "teamId":"cardinals"
+                  "teamId":"cardinals",
+                  "img": "cardinals.svg"
                 },
                 {
                   "name":"San Francisco 49ers",
-                  "teamId":"niners"
+                  "teamId":"niners",
+                  "img": "niners.svg"
                 },
                 {
                   "name":"Seattle Seahawks",
-                  "teamId":"seahawks"
+                  "teamId":"seahawks",
+                  "img": "seahawks.svg"
                 },
                 {
                   "name":"St. Louis Rams",
-                  "teamId":"rams"
+                  "teamId":"rams",
+                  "img": "rams.svg"
                 }]
 
-
+                check4Teams()
 
   });
