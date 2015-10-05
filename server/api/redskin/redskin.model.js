@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
 var RedskinSchema = new Schema({
   message: String,
   loc: String,
-  user: String
+  user: String,
+  time: String
 });
 
 module.exports = mongoose.model('Redskin', RedskinSchema);

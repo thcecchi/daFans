@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
 var BengalSchema = new Schema({
   message: String,
   loc: String,
-  user: String
+  user: String,
+  time: String
 });
 
 module.exports = mongoose.model('Bengal', BengalSchema);

@@ -6,7 +6,8 @@ angular.module('daFansApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ngGeolocation'
+  'ngGeolocation',
+  'angularMoment'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

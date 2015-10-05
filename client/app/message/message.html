@@ -1,32 +1,31 @@
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
+<div class="app-body">
+  <header class="hero-unit" id="banner">
+    <div class="container">
+      <h3 class="header-copy">{{this.city}} {{this.team}} Talk</h3>
+    </div>
+  </header>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>{{this.team}}</h1>
-    <h3>{{this.city}}</h3>
+  <div class="container message-box">
+    <div>
+      <ul class="message-container col-md-8 col-lg-12 col-sm-12" ng-repeat="message in this.localMessages">
+        <li>
+          <p>{{message.message}}</p>
+          <span class="timestamp" am-time-ago="message.time"></span>
+        </li>
+      </ul>
+    </div>
   </div>
-</header>
 
-<div class="container">
-  <div>
-    <ul class="message-container col-md-8 col-lg-12 col-sm-12" ng-repeat="message in this.localMessages">
-      <li><p>{{message.message}}</p></li>
-    </ul>
-  </div>
+  <footer class="footer">
+    <div class="container">
+      <form class="message-form">
 
-  <form class="message-form">
+          <input type="text" id="message-editor" class="col-md-8 col-lg-12 col-sm-12" placeholder="Add a new message here." ng-model="newMessage">
 
-      <input type="text" id="message-editor" class="col-md-8 col-lg-12 col-sm-12" placeholder="Add a new message here." ng-model="newMessage">
+            <button type="submit" class="col-md-8 col-lg-12 col-sm-12" ng-click="addMessage()">SEND</button>
 
-        <button type="submit" class="col-md-8 col-lg-12 col-sm-12" ng-click="addMessage()">Add New</button>
-
-  </form>
+      </form>
+    </div>
+  </footer>
 </div>
-
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.1.1 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>

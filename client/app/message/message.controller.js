@@ -1,14 +1,13 @@
 'use strict';
 
 angular.module('daFansApp')
-  .controller('MessageCtrl', function (geoService, $scope, $http, socket, $geolocation, $routeParams, $rootScope) {
+  .controller('MessageCtrl', function (geoService, $scope, $http, socket, $geolocation, $routeParams, $rootScope, moment) {
     var thisTeam = $routeParams.teamId
     var thisTeamSing = thisTeam.substring(0, thisTeam.length - 1);
+    var thisTeamPlur = thisTeam.substr(0, 1).toUpperCase() + thisTeam.substr(1);
     $scope.localMessages = [];
-    $scope.team = thisTeam
-    console.log($rootScope.city)
-    console.log($scope.team)
-    console.log(thisTeamSing)
+    $scope.team = thisTeamPlur
+
 
     $http.get('/api/' + thisTeam).success(function(allMessages) {
       for (var i = 0; i < allMessages.length; i++){
@@ -28,7 +27,8 @@ angular.module('daFansApp')
       }
       console.log($rootScope.city)
       $http.post('/api/' + thisTeam, { message: $scope.newMessage,
-                                       loc: $rootScope.city
+                                       loc: $rootScope.city,
+                                       time: new Date()
                                      });
       $scope.newMessage = '';
     };

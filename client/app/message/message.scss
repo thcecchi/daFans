@@ -1,5 +1,4 @@
 #message-editor {
-  margin-top: 5%;
   border: 5px solid #0B162A;
   font-family: helvetica;
   font-size: 1.5em;
@@ -9,31 +8,54 @@
   width: 100%;
 }
 
+.header-copy {
+  display: inline-block;
+}
+
+
 button {
-  margin-top: 1%;
+  margin-top: 2%;
   display: block;
   padding: 2%;
-  background-color: chartreuse;
+  background-color: #008CA8;
   border-radius: 10px;
   border: none;
   width: 100%;
+  color: #fff;
+  font-family: 'helvetica';
+  font-weight: bold;
+  font-size: 2em;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: #007E97;
+  }
 }
 
-.message-container {
+.message-box {
+  height: 80vh;
+  overflow: scroll;
 
-  li {
-    // width: 80%;
-    background-color: white;
-    display: block;
-    margin: 0 auto;
-    padding: 2%;
-    border-bottom: 5px solid #0B162A;
+  .message-container {
+
+    li {
+      border-radius: 10px;
+      // width: 80%;
+      background-color: #ecf0f1;
+      display: block;
+      margin: 0 auto;
+      padding: 2%;
 
 
-    p {
-      font-family: helvetica;
-      font-size: 2em;
-      color: #C83803;
+      p {
+        font-family: helvetica;
+        font-size: 1.25em;
+        color: #008CA8;
+      }
     }
   }
+}
+
+.timestamp {
+  opacity: .7;
 }
