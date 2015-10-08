@@ -1,31 +1,37 @@
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <div class="app-body">
-  <header class="hero-unit" id="banner">
+  <header class="hero-unit {{this.team}}" id="banner">
     <div class="container">
       <h3 class="header-copy">{{this.city}} {{this.team}} Talk</h3>
     </div>
   </header>
 
-  <div class="container message-box">
-    <div>
-      <ul class="message-container col-md-8 col-lg-12 col-sm-12" ng-repeat="message in this.localMessages">
+    <div id="subnav" class="{{this.team}} col-md-2 col-lg-2 col-sm-2">
+      <div class="teamsList" ng-controller="TeamCtrl">
+        <ul ng-repeat="team in this.allTeams">
+          <li><a href="/team/{{team.teamId}}">{{team.name}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="message-box col-md-10 col-lg-10 col-sm-10">
+      <ul class="message-container" ng-repeat="message in this.localMessages">
         <li>
           <p>{{message.message}}</p>
           <span class="timestamp" am-time-ago="message.time"></span>
         </li>
       </ul>
     </div>
-  </div>
 
-  <footer class="footer">
+
+  <!-- <footer class="footer">
     <div class="container">
       <form class="message-form">
 
           <input type="text" id="message-editor" class="col-md-8 col-lg-12 col-sm-12" placeholder="Add a new message here." ng-model="newMessage">
 
-            <button type="submit" class="col-md-8 col-lg-12 col-sm-12" ng-click="addMessage()">SEND</button>
+            <button type="submit" class="col-md-8 col-lg-12 col-sm-12 {{this.team}} submit-btn" ng-click="addMessage()">SEND</button>
 
       </form>
     </div>
-  </footer>
+  </footer> -->
 </div>

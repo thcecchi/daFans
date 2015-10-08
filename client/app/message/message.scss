@@ -8,6 +8,22 @@
   width: 100%;
 }
 
+#subnav {
+  height: 90vh;
+  overflow: scroll;
+
+  .teamsList {
+    padding-top: 5%;
+  }
+
+  ul {
+
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
 .header-copy {
   display: inline-block;
 }
@@ -15,6 +31,7 @@
 
 button {
   margin-top: 2%;
+  margin-bottom: 1%;
   display: block;
   padding: 2%;
   background-color: #008CA8;
@@ -27,30 +44,34 @@ button {
   font-size: 2em;
   letter-spacing: 2px;
 
-  &:hover {
-    background-color: #007E97;
-  }
+  // &:hover {
+  //   background-color: #007E97;
+  // }
 }
 
 .message-box {
-  height: 80vh;
+  height: 90vh;
   overflow: scroll;
 
   .message-container {
+    padding-top: 1%;
+    padding-bottom: 1%;
 
     li {
-      border-radius: 10px;
-      // width: 80%;
-      background-color: #ecf0f1;
+      width: 100%;
+      // background-color: #ecf0f1;
       display: block;
       margin: 0 auto;
       padding: 2%;
+      border-bottom: 1px solid lightgray;
 
 
       p {
-        font-family: helvetica;
-        font-size: 1.25em;
-        color: #008CA8;
+        font-family: 'Merriweather';
+        font-size: 1.5em;
+        line-height: 3em;
+        margin-top: -5px;
+        // color: #008CA8;
       }
     }
   }

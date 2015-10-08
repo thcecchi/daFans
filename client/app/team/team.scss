@@ -4,10 +4,11 @@
 
 #banner {
   height: 10vh;
+  // margin-bottom: 1%;
 }
 
 #banner h3 {
-    font-size: 2em;
+    font-size: 2.25em;
     font-family: 'avenir';
     letter-spacing: 2px;
 }
@@ -32,10 +33,10 @@
 
 .hero-unit {
     position: relative;
-    color: #fff;
+    // color: #fff;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #008CA8;
+    // background: #008CA8;
 
 }
 
@@ -56,4 +57,519 @@
 
 .navbar-text {
   margin-left: 15px;
+}
+
+// team styles
+.Bengals  {
+
+  &.hero-unit  {
+    background: #FB4F14;
+    color: #000;
+  }
+
+  &.submit-btn {
+    background: #FB4F14;
+
+    &:hover {
+      background: #000;
+    }
+  }
+}
+
+.Ravens  {
+
+  &.hero-unit  {
+    background: #fff;
+    border-bottom: 2px solid #241773;
+    color: #241773;
+  }
+
+  &.submit-btn {
+    background: #241773;
+
+    &:hover {
+      background: #9E7C0C;
+    }
+  }
+}
+
+.Browns  {
+
+  &.hero-unit  {
+    background: #A5ACAF;
+    color: #FB4F14;
+  }
+
+  &.submit-btn {
+    background: #A5ACAF;
+
+    &:hover {
+      background: #FB4F14;
+    }
+  }
+}
+
+.Bears  {
+
+  &.hero-unit  {
+    background: #0B162A;
+    color: #C83803;
+  }
+
+  &.submit-btn {
+    background: #0B162A;
+
+    &:hover {
+      background: #C83803;
+    }
+  }
+}
+
+.Steelers  {
+
+  &.hero-unit  {
+    background: #FFB612;
+    color: #000;
+  }
+
+  &.submit-btn {
+    background: #FFB612;
+
+    &:hover {
+      background: #000;
+    }
+  }
+}
+
+.Lions  {
+
+  &.hero-unit  {
+    background: #B0B7BC;
+    color: #005A8B;
+  }
+
+  &.submit-btn {
+    background: #B0B7BC;
+
+    &:hover {
+      background: #005A8B;
+    }
+  }
+}
+
+.Packers  {
+
+  &.hero-unit  {
+    background: #203731;
+    color: #FFB612;
+  }
+
+  &.submit-btn {
+    background: #203731;
+
+    &:hover {
+      background: #FFB612;
+    }
+  }
+}
+
+.Vikings  {
+
+  &.hero-unit  {
+    background: #4F2683;
+    color: #FFC62F;
+  }
+
+  &.submit-btn {
+    background: #4F2683;
+
+    &:hover {
+      background: #FFC62F;
+    }
+  }
+}
+
+.Texans  {
+
+  &.hero-unit  {
+    background: #A71930;
+    color: #03202F;
+  }
+
+  &.submit-btn {
+    background: #A71930;
+
+    &:hover {
+      background: #03202F;
+    }
+  }
+}
+
+.Colts  {
+
+  &.hero-unit  {
+    background: #A5ACAF;
+    color: #002C5F;
+  }
+
+  &.submit-btn {
+    background: #A5ACAF;
+
+    &:hover {
+      background: #002C5F;
+    }
+  }
+}
+
+.Jaguars  {
+
+  &.hero-unit  {
+    background: #006778;
+    color: #D7A22A;
+  }
+
+  &.submit-btn {
+    background: #006778;
+
+    &:hover {
+      background: #D7A22A;
+    }
+  }
+}
+
+.Titans  {
+
+  &.hero-unit  {
+    background: #4B92DB;
+    color: #002244;
+  }
+
+  &.submit-btn {
+    background: #4B92DB;
+
+    &:hover {
+      background: #002244;
+    }
+  }
+}
+
+.Falcons  {
+
+  &.hero-unit  {
+    background: #A71930;
+    color: #000000;
+  }
+
+  &.submit-btn {
+    background: #A71930;
+
+    &:hover {
+      background: #000000;
+    }
+  }
+}
+
+.Panthers  {
+
+  &.hero-unit  {
+    background: #fff;
+    border-bottom: 2px solid #0085CA;
+    color: #0085CA;
+  }
+
+  &.submit-btn {
+    background: #0085CA;
+
+    &:hover {
+      background: #000000;
+    }
+  }
+}
+
+.Saints  {
+
+  &.hero-unit  {
+    background: #9F8958;
+    color: #000000;
+  }
+
+  &.submit-btn {
+    background: #9F8958;
+
+    &:hover {
+      background: #000000;
+    }
+  }
+}
+
+.Bucs  {
+
+  &.hero-unit  {
+    background: #D50A0A;
+    color: #34302B;
+  }
+
+  &.submit-btn {
+    background: #D50A0A;
+
+    &:hover {
+      background: #34302B;
+    }
+  }
+}
+
+.Bills  {
+
+  &.hero-unit  {
+    background: #00338D;
+    color: #C60C30;
+  }
+
+  &.submit-btn {
+    background: #00338D;
+
+    &:hover {
+      background: #C60C30;
+    }
+  }
+}
+
+.Dolphins  {
+
+  &.hero-unit  {
+    background: #008E97;
+    color: #F58220;
+  }
+
+  &.submit-btn {
+    background: #008E97;
+
+    &:hover {
+      background: #F58220;
+    }
+  }
+}
+
+.Patriots  {
+
+  &.hero-unit  {
+    background: #002244;
+    color: #C60C30;
+  }
+
+  &.submit-btn {
+    background: #002244;
+
+    &:hover {
+      background: #C60C30;
+    }
+  }
+}
+
+.Jets  {
+
+  &.hero-unit  {
+    background: #203731;
+    color: #fff;
+  }
+
+  &.submit-btn {
+    background: #203731;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+}
+
+.Cowboys  {
+
+  &.hero-unit  {
+    background: #002244;
+    color: #B0B7BC;
+  }
+
+  &.submit-btn {
+    background: #002244;
+
+    &:hover {
+      background: #B0B7BC;
+    }
+  }
+}
+
+.Giants  {
+
+  &.hero-unit  {
+    background: #0B2265;
+    color: #A5ACAF;
+  }
+
+  &.submit-btn {
+    background: #0B2265;
+
+    &:hover {
+      background: #A5ACAF;
+    }
+  }
+}
+
+.Eagles  {
+
+  &.hero-unit  {
+    background: #004953;
+    color: #A5ACAF;
+  }
+
+  &.submit-btn {
+    background: #004953;
+
+    &:hover {
+      background: #A5ACAF;
+    }
+  }
+}
+
+.Redskins  {
+
+  &.hero-unit  {
+    background: #FFB612;
+    color: #5B2B2F;
+  }
+
+  &.submit-btn {
+    background: #FFB612;
+
+    &:hover {
+      background: #5B2B2F;
+    }
+  }
+}
+
+.Broncos  {
+
+  &.hero-unit  {
+    background: #FB4F14;
+    color: #fff;
+  }
+
+  &.submit-btn {
+    background: #FB4F14;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+}
+
+.Chiefs  {
+
+  &.hero-unit  {
+    background: #E31837;
+    color: #000;
+  }
+
+  &.submit-btn {
+    background: #E31837;
+
+    &:hover {
+      background: #000;
+    }
+  }
+}
+
+.Raiders  {
+
+  &.hero-unit  {
+    background: #000;
+    color: #A5ACAF;
+  }
+
+  &.submit-btn {
+    background: #000;
+
+    &:hover {
+      background: #A5ACAF;
+    }
+  }
+}
+
+.Chargers  {
+
+  &.hero-unit  {
+    background: #FFB612;
+    color: #0073CF;
+  }
+
+  &.submit-btn {
+    background: #FFB612;
+
+    &:hover {
+      background: #0073CF;
+    }
+  }
+}
+
+.Cardinals  {
+
+  &.hero-unit  {
+    background: #97233F;
+    color: #000;
+  }
+
+  &.submit-btn {
+    background: #97233F;
+
+    &:hover {
+      background: #000;
+    }
+  }
+}
+
+.Niners  {
+
+  &.hero-unit  {
+    background: #AA0000;
+    color: #000;
+  }
+
+  &.submit-btn {
+    background: #AA0000;
+
+    &:hover {
+      background: #000;
+    }
+  }
+}
+
+.Seahawks  {
+
+  &.hero-unit  {
+    background: #69BE28;
+    color: #002244;
+  }
+
+  &.submit-btn {
+    background: #69BE28;
+
+    &:hover {
+      background: #002244;
+    }
+  }
+}
+
+.Rams  {
+
+  &.hero-unit  {
+    background: #B3995D;
+    color: #002244;
+  }
+
+  &.submit-btn {
+    background: #B3995D;
+
+    &:hover {
+      background: #002244;
+    }
+  }
 }

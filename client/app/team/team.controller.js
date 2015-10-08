@@ -64,7 +64,7 @@ angular.module('daFansApp')
                 {
                   "name":"Jacksonville Jaguars",
                   "teamId":"jaguars",
-                  "img": "jaguars.png"
+                  "img": "jaguars.svg"
                 },
                 {
                   "name":"Tennessee Titans",
