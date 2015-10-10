@@ -1,9 +1,9 @@
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <div class="app-body">
   <header class="hero-unit {{this.team}}" id="banner">
-    <div class="container">
+    <!-- <div class="container"> -->
       <h3 class="header-copy">{{this.city}} {{this.team}} Talk</h3>
-    </div>
+    <!-- </div> -->
   </header>
 
     <div id="subnav" class="{{this.team}} col-md-2 col-lg-2 col-sm-2">
@@ -13,7 +13,10 @@
         </ul>
       </div>
     </div>
+
     <div class="message-box col-md-10 col-lg-10 col-sm-10">
+      <button id="message-button" type="button" name="button">+</button>
+
       <ul class="message-container" ng-repeat="message in this.localMessages">
         <li>
           <p>{{message.message}}</p>
@@ -21,6 +24,7 @@
         </li>
       </ul>
     </div>
+    <div class="fadedScroller_fade"></div>
 
 
   <!-- <footer class="footer">
