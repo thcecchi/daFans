@@ -8,7 +8,6 @@ angular.module('daFansApp')
     $scope.localMessages = [];
     $scope.team = thisTeamPlur
 
-
     $http.get('/api/' + thisTeam).success(function(allMessages) {
       for (var i = 0; i < allMessages.length; i++){
         console.log(allMessages[i].loc)
@@ -21,7 +20,7 @@ angular.module('daFansApp')
       console.log($scope.localMessages)
     });
 
-    $scope.addMessage = function() {
+    $scope.addMessage = function () {
       if($scope.newMessage === '') {
         return;
       }
@@ -33,7 +32,12 @@ angular.module('daFansApp')
       $scope.newMessage = '';
     };
 
-    $scope.deleteMessage = function(message) {
+    $scope.revealForm = function () {
+      console.log('FORM!')
+      $('.form-container').addClass('bounceInDown').removeClass('hide')
+    }
+
+    $scope.deleteMessage = function (message) {
       $http.delete('/api/messages/' + message._id);
     };
 

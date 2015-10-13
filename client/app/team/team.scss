@@ -4,12 +4,17 @@
 
 #banner {
   max-height: 10vh;
+  box-shadow: 0 0 10px 10px #ffffff;
 
-  h3{
+  .header-copy {
+    display: inline-block;
     font-size: 2.25em;
     font-family: 'avenir';
     letter-spacing: 2px;
+    text-align: right;
   }
+
+  
 }
 
 #loading-screen {
@@ -32,11 +37,9 @@
 
 .hero-unit {
     position: relative;
-    // color: #fff;
+    color: #fff;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    // background: #008CA8;
-
 }
 
 .team-logo {

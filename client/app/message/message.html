@@ -15,7 +15,7 @@
     </div>
 
     <div class="message-box col-md-10 col-lg-10 col-sm-10">
-      <button id="message-button" type="button" name="button">+</button>
+      <button id="message-button" type="button" name="button" ng-click="revealForm()">+</button>
 
       <ul class="message-container" ng-repeat="message in this.localMessages">
         <li>
@@ -24,11 +24,8 @@
         </li>
       </ul>
     </div>
-    <div class="fadedScroller_fade"></div>
 
-
-  <!-- <footer class="footer">
-    <div class="container">
+    <div class="form-container container animated hide">
       <form class="message-form">
 
           <input type="text" id="message-editor" class="col-md-8 col-lg-12 col-sm-12" placeholder="Add a new message here." ng-model="newMessage">
@@ -37,5 +34,10 @@
 
       </form>
     </div>
+    <div class="fadedScroller_fade"></div>
+
+
+  <!-- <footer class="footer">
+
   </footer> -->
 </div>
