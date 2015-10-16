@@ -1,11 +1,13 @@
 #message-editor {
+  z-index: 999;
   border: 5px solid #0B162A;
   font-family: helvetica;
   font-size: 1.5em;
   outline: 0;
   border-radius: 0;
   padding: 2%;
-  width: 100%;
+  background: #fff;
+  height: 110px;
 }
 
 #subnav {
@@ -21,6 +23,10 @@
 
     li {
       list-style-type: none;
+
+      a {
+        color: #000;
+      }
     }
   }
 }
@@ -54,30 +60,12 @@ button {
     position: relative;
 }
 
-.message-box {
+#message-box {
   height: 90vh;
   overflow: scroll;
   position: relative;
 
-  #message-button {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #FB4F14;
-    border-radius: 500px;
-    background: #FB4F14;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    letter-spacing: 0;
-    font-size: 2em;
-    margin-left: 60%;
-    margin-top: -2%;
-    z-index: 99999999999999999;
-    position: fixed;
-  }
-
-  .message-container {
+  #message-container {
     padding-top: 1%;
     padding-bottom: 1%;
 
@@ -89,6 +77,7 @@ button {
       padding: 2%;
       border-left: 2px solid #FB4F14;
       border-bottom: 1px solid lightgray;
+      margin-bottom: 3%;
 
 
       p {
@@ -100,6 +89,36 @@ button {
       }
     }
   }
+
+  &.faded {
+    opacity: .5;
+  }
+}
+
+.form-container {
+  z-index: 999;
+  background: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: -250px;
+  border: 3px solid #000;
+  height: 230px;
+  opacity: 0;
+  -webkit-transition: top .25s ease-out, opacity .25s ease-out;
+  -moz-transition: top .25s ease-out, opacity .25s ease-out;
+  -o-transition: top .25s ease-out, opacity .25s ease-out;
+  transition: top .25s ease-out, opacity .25s ease-out;
+
+  &.active {
+    opacity: 1;
+    top: 80px;
+  }
+}
+
+.message-form {
+  padding-top: 3%;
+  // padding-bottom: 1%;
+  overflow: hidden;
 }
 
 .timestamp {

@@ -8,15 +8,35 @@ angular.module('daFansApp')
     $scope.localMessages = [];
     $scope.team = thisTeamPlur
 
-    $http.get('/api/' + thisTeam).success(function(allMessages) {
-      for (var i = 0; i < allMessages.length; i++){
-        console.log(allMessages[i].loc)
-        if (allMessages[i].loc == $rootScope.city) {
-          $scope.localMessages.push(allMessages[i])
+    $scope.startAtBottom = function () {
+      var wtf = $('#message-box');
+      var height = wtf[0].scrollHeight;
+      wtf.scrollTop(height);
+      console.log('hey!')
+    }
+
+    $scope.arrangeComments = function (comments) {
+      for (var i = 0; i < comments.length; i++){
+        console.log(comments[i].loc)
+        if (comments[i].loc == $rootScope.city) {
+          $scope.localMessages.push(comments[i])
         }
       }
+    }
+
+    $http.get('/api/' + thisTeam).success(function(allMessages) {
+      $scope.arrangeComments(allMessages).then(function() {
+        $scope.startAtBottom();
+      })
+
+      // for (var i = 0; i < allMessages.length; i++){
+      //   console.log(allMessages[i].loc)
+      //   if (allMessages[i].loc == $rootScope.city) {
+      //     $scope.localMessages.push(allMessages[i])
+      //   }
+      // }
       // $scope.allMessages = allMessages;
-      socket.syncUpdates(thisTeamSing, $scope.localMessages);
+      socket.syncUpdates(thisTeamSing, $scope.localMessages)
       console.log($scope.localMessages)
     });
 
@@ -28,16 +48,24 @@ angular.module('daFansApp')
       $http.post('/api/' + thisTeam, { message: $scope.newMessage,
                                        loc: $rootScope.city,
                                        time: new Date()
+                                     }).then(function () {
+                                       $scope.startAtBottom()
                                      });
       $scope.newMessage = '';
+      $scope.revealForm();
     };
 
     $scope.revealForm = function () {
-      console.log('FORM!')
-      $('.form-container').addClass('bounceInDown').removeClass('hide')
+      $scope.startAtBottom()
+      $('.form-container').toggleClass('active');
+      $('.plus-icon').toggleClass('active');
+      $('#message-box').toggleClass('faded');
     }
 
     $scope.deleteMessage = function (message) {
+
+      if (message.time > moment().diff('days'))
+      console.log()
       $http.delete('/api/messages/' + message._id);
     };
 

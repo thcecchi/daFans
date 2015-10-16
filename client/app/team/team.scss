@@ -5,6 +5,8 @@
 #banner {
   max-height: 10vh;
   box-shadow: 0 0 10px 10px #ffffff;
+  background: #fff;
+  z-index: 9999;
 
   .header-copy {
     display: inline-block;
@@ -14,7 +16,38 @@
     text-align: right;
   }
 
-  
+  #message-button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #FB4F14;
+    border-radius: 500px;
+    background: #FB4F14;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    letter-spacing: 0;
+    // font-size: 2em;
+    margin-left: 10%;
+    margin-top: 3%;
+    z-index: 99999999999999999;
+    position: fixed;
+  }
+
+  .plus-icon {
+    display: inline-block;
+    -moz-transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+
+    &.active {
+      -moz-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
 }
 
 #loading-screen {

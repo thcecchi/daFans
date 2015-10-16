@@ -3,8 +3,16 @@
   <header class="hero-unit {{this.team}}" id="banner">
     <!-- <div class="container"> -->
       <h3 class="header-copy">{{this.city}} {{this.team}} Talk</h3>
+      <button id="message-button" type="button" name="button" ng-click="revealForm()"><span class="plus-icon">+</span></button>
     <!-- </div> -->
   </header>
+
+  <div class="form-container col-md-6 col-md-offset-3">
+    <form class="message-form">
+        <input type="textarea" id="message-editor" class="col-md-offset-1 col-md-10 col-lg-10 col-sm-10" placeholder="Add a new message here." ng-model="newMessage">
+        <button type="submit" class="col-md-offset-2 col-md-8 col-lg-8 col-sm-8 {{this.team}} submit-btn" ng-click="addMessage()">SEND</button>
+    </form>
+  </div>
 
     <div id="subnav" class="{{this.team}} col-md-2 col-lg-2 col-sm-2">
       <div class="teamsList" ng-controller="TeamCtrl">
@@ -14,25 +22,14 @@
       </div>
     </div>
 
-    <div class="message-box col-md-10 col-lg-10 col-sm-10">
-      <button id="message-button" type="button" name="button" ng-click="revealForm()">+</button>
+    <div id="message-box" class="col-md-10 col-lg-10 col-sm-10">
 
-      <ul class="message-container" ng-repeat="message in this.localMessages">
-        <li>
+      <ul id="message-container">
+        <li ng-repeat="message in this.localMessages">
           <p>{{message.message}}</p>
           <span class="timestamp" am-time-ago="message.time"></span>
         </li>
       </ul>
-    </div>
-
-    <div class="form-container container animated hide">
-      <form class="message-form">
-
-          <input type="text" id="message-editor" class="col-md-8 col-lg-12 col-sm-12" placeholder="Add a new message here." ng-model="newMessage">
-
-            <button type="submit" class="col-md-8 col-lg-12 col-sm-12 {{this.team}} submit-btn" ng-click="addMessage()">SEND</button>
-
-      </form>
     </div>
     <div class="fadedScroller_fade"></div>
 
