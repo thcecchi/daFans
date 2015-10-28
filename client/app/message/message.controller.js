@@ -8,7 +8,6 @@ angular.module('daFansApp')
     var lastWeek = moment().subtract(7, 'days').startOf('day').format();
     $scope.localMessages = [];
     $scope.team = thisTeamPlur
-    console.log(lastWeek)
 
     $http.get('/api/' + thisTeam).success(function(allMessages) {
       $scope.arrangeComments(allMessages)
