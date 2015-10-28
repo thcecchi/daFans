@@ -9,8 +9,8 @@
 
   <div class="form-container col-md-6 col-md-offset-3">
     <form class="message-form">
-        <input type="textarea" id="message-editor" class="col-md-offset-1 col-md-10 col-lg-10 col-sm-10" placeholder="Add a new message here." ng-model="newMessage">
-        <button type="submit" class="col-md-offset-2 col-md-8 col-lg-8 col-sm-8 {{this.team}} submit-btn" ng-click="addMessage()">SEND</button>
+        <textarea id="message-editor" class="col-md-offset-1 col-md-10 col-lg-10 col-sm-10" placeholder="Add a new message here." ng-model="newMessage"></textarea>
+        <a type="submit" id="submit-btn" class="col-md-12 col-lg-12 col-sm-12 {{this.team}}" ng-click="addMessage()">SEND</a>
     </form>
   </div>
 
@@ -24,8 +24,8 @@
 
     <div id="message-box" class="col-md-10 col-lg-10 col-sm-10">
 
-      <ul id="message-container">
-        <li ng-repeat="message in this.localMessages">
+      <ul id="message-container" ng-init="startAtBottom()">
+        <li class="message-item" ng-repeat="message in this.localMessages">
           <p>{{message.message}}</p>
           <span class="timestamp" am-time-ago="message.time"></span>
         </li>

@@ -11,7 +11,7 @@
   .header-copy {
     display: inline-block;
     font-size: 2.25em;
-    font-family: 'avenir';
+    font-family: 'Lato', sans-serif;
     letter-spacing: 2px;
     text-align: right;
   }
@@ -99,15 +99,14 @@
 
   &.hero-unit  {
     // background: #fff;
-    border-bottom: 2px solid #FB4F14;
+    border-bottom: 1px dashed #FB4F14;
     color: #FB4F14;
   }
 
-  &.submit-btn {
-    background: #FB4F14;
+  &#submit-btn {
 
     &:hover {
-      background: #000;
+      color: #FB4F14;
     }
   }
 }
@@ -120,11 +119,10 @@
     color: #241773;
   }
 
-  &.submit-btn {
-    background: #241773;
+  &#submit-btn {
 
     &:hover {
-      background: #9E7C0C;
+      color: #9E7C0C;
     }
   }
 }
@@ -136,11 +134,10 @@
     color: #FB4F14;
   }
 
-  &.submit-btn {
-    background: #A5ACAF;
+  &#submit-btn {
 
     &:hover {
-      background: #FB4F14;
+      color: #FB4F14;
     }
   }
 }
@@ -152,11 +149,10 @@
     color: #C83803;
   }
 
-  &.submit-btn {
-    background: #0B162A;
+  &#submit-btn {
 
     &:hover {
-      background: #C83803;
+      color: #C83803;
     }
   }
 }
@@ -168,11 +164,10 @@
     color: #000;
   }
 
-  &.submit-btn {
-    background: #FFB612;
+  &#submit-btn {
 
     &:hover {
-      background: #000;
+      color: #000;
     }
   }
 }
@@ -184,11 +179,10 @@
     color: #005A8B;
   }
 
-  &.submit-btn {
-    background: #B0B7BC;
+  &#submit-btn {
 
     &:hover {
-      background: #005A8B;
+      color: #005A8B;
     }
   }
 }
@@ -200,11 +194,10 @@
     color: #FFB612;
   }
 
-  &.submit-btn {
-    background: #203731;
+  &#submit-btn {
 
     &:hover {
-      background: #FFB612;
+      color: #FFB612;
     }
   }
 }
@@ -216,11 +209,10 @@
     color: #FFC62F;
   }
 
-  &.submit-btn {
-    background: #4F2683;
+  &#submit-btn {
 
     &:hover {
-      background: #FFC62F;
+      color: #FFC62F;
     }
   }
 }
@@ -232,11 +224,10 @@
     color: #03202F;
   }
 
-  &.submit-btn {
-    background: #A71930;
+  &#submit-btn {
 
     &:hover {
-      background: #03202F;
+      color: #03202F;
     }
   }
 }
@@ -248,11 +239,10 @@
     color: #002C5F;
   }
 
-  &.submit-btn {
-    background: #A5ACAF;
+  &#submit-btn {
 
     &:hover {
-      background: #002C5F;
+      color: #002C5F;
     }
   }
 }
@@ -264,11 +254,10 @@
     color: #D7A22A;
   }
 
-  &.submit-btn {
-    background: #006778;
+  &#submit-btn {
 
     &:hover {
-      background: #D7A22A;
+      color: #D7A22A;
     }
   }
 }
@@ -280,11 +269,10 @@
     color: #002244;
   }
 
-  &.submit-btn {
-    background: #4B92DB;
+  &#submit-btn {
 
     &:hover {
-      background: #002244;
+      color: #002244;
     }
   }
 }
@@ -296,11 +284,10 @@
     color: #000000;
   }
 
-  &.submit-btn {
-    background: #A71930;
+  &#submit-btn {
 
     &:hover {
-      background: #000000;
+      color: #000000;
     }
   }
 }
@@ -313,11 +300,10 @@
     color: #0085CA;
   }
 
-  &.submit-btn {
-    background: #0085CA;
+  &#submit-btn {
 
     &:hover {
-      background: #000000;
+      color: #000000;
     }
   }
 }
@@ -329,11 +315,10 @@
     color: #000000;
   }
 
-  &.submit-btn {
-    background: #9F8958;
+  &#submit-btn {
 
     &:hover {
-      background: #000000;
+      color: #000000;
     }
   }
 }
@@ -345,11 +330,10 @@
     color: #34302B;
   }
 
-  &.submit-btn {
-    background: #D50A0A;
+  &#submit-btn {
 
     &:hover {
-      background: #34302B;
+      color: #34302B;
     }
   }
 }
@@ -361,11 +345,10 @@
     color: #C60C30;
   }
 
-  &.submit-btn {
-    background: #00338D;
+  &#submit-btn {
 
     &:hover {
-      background: #C60C30;
+      color: #C60C30;
     }
   }
 }
@@ -377,11 +360,10 @@
     color: #F58220;
   }
 
-  &.submit-btn {
-    background: #008E97;
+  &#submit-btn {
 
     &:hover {
-      background: #F58220;
+      color: #F58220;
     }
   }
 }
@@ -393,11 +375,10 @@
     color: #C60C30;
   }
 
-  &.submit-btn {
-    background: #002244;
+  &#submit-btn {
 
     &:hover {
-      background: #C60C30;
+      color: #C60C30;
     }
   }
 }
@@ -409,11 +390,10 @@
     color: #fff;
   }
 
-  &.submit-btn {
-    background: #203731;
+  &#submit-btn {
 
     &:hover {
-      background: #fff;
+      color: #fff;
     }
   }
 }
@@ -425,11 +405,10 @@
     color: #B0B7BC;
   }
 
-  &.submit-btn {
-    background: #002244;
+  &#submit-btn {
 
     &:hover {
-      background: #B0B7BC;
+      color: #B0B7BC;
     }
   }
 }
@@ -441,11 +420,10 @@
     color: #A5ACAF;
   }
 
-  &.submit-btn {
-    background: #0B2265;
+  &#submit-btn {
 
     &:hover {
-      background: #A5ACAF;
+      color: #A5ACAF;
     }
   }
 }
@@ -457,11 +435,10 @@
     color: #A5ACAF;
   }
 
-  &.submit-btn {
-    background: #004953;
+  &#submit-btn {
 
     &:hover {
-      background: #A5ACAF;
+      color: #A5ACAF;
     }
   }
 }
@@ -473,11 +450,10 @@
     color: #5B2B2F;
   }
 
-  &.submit-btn {
-    background: #FFB612;
+  &#submit-btn {
 
     &:hover {
-      background: #5B2B2F;
+      color: #5B2B2F;
     }
   }
 }
@@ -489,11 +465,10 @@
     color: #fff;
   }
 
-  &.submit-btn {
-    background: #FB4F14;
+  &#submit-btn {
 
     &:hover {
-      background: #fff;
+      color: #fff;
     }
   }
 }
@@ -505,11 +480,10 @@
     color: #000;
   }
 
-  &.submit-btn {
-    background: #E31837;
+  &#submit-btn {
 
     &:hover {
-      background: #000;
+      color: #000;
     }
   }
 }
@@ -521,11 +495,8 @@
     color: #A5ACAF;
   }
 
-  &.submit-btn {
-    background: #000;
-
-    &:hover {
-      background: #A5ACAF;
+  &#submit-btn {  &:hover {
+      color: #A5ACAF;
     }
   }
 }
@@ -537,11 +508,10 @@
     color: #0073CF;
   }
 
-  &.submit-btn {
-    background: #FFB612;
+  &#submit-btn {
 
     &:hover {
-      background: #0073CF;
+      color: #0073CF;
     }
   }
 }
@@ -553,11 +523,10 @@
     color: #000;
   }
 
-  &.submit-btn {
-    background: #97233F;
+  &#submit-btn {
 
     &:hover {
-      background: #000;
+      color: #000;
     }
   }
 }
@@ -569,11 +538,10 @@
     color: #000;
   }
 
-  &.submit-btn {
-    background: #AA0000;
+  &#submit-btn {
 
     &:hover {
-      background: #000;
+      color: #000;
     }
   }
 }
@@ -585,11 +553,10 @@
     color: #002244;
   }
 
-  &.submit-btn {
-    background: #69BE28;
+  &#submit-btn {
 
     &:hover {
-      background: #002244;
+      color: #002244;
     }
   }
 }
@@ -601,11 +568,10 @@
     color: #002244;
   }
 
-  &.submit-btn {
-    background: #B3995D;
+  &#submit-btn {
 
     &:hover {
-      background: #002244;
+      color: #002244;
     }
   }
 }

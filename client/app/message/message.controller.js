@@ -8,11 +8,18 @@ angular.module('daFansApp')
     $scope.localMessages = [];
     $scope.team = thisTeamPlur
 
+    $http.get('/api/' + thisTeam).success(function(allMessages) {
+      $scope.arrangeComments(allMessages)
+      socket.syncUpdates(thisTeamSing, $scope.localMessages)
+      console.log($scope.localMessages)
+    }).finally(function() {
+      $scope.startAtBottom()
+    })
+
     $scope.startAtBottom = function () {
-      var wtf = $('#message-box');
-      var height = wtf[0].scrollHeight;
-      wtf.scrollTop(height);
-      console.log('hey!')
+      var element = document.getElementById("message-box");
+      element.scrollTop = element.scrollHeight;
+      console.log('bottom of message-box!')
     }
 
     $scope.arrangeComments = function (comments) {
@@ -23,22 +30,6 @@ angular.module('daFansApp')
         }
       }
     }
-
-    $http.get('/api/' + thisTeam).success(function(allMessages) {
-      $scope.arrangeComments(allMessages).then(function() {
-        $scope.startAtBottom();
-      })
-
-      // for (var i = 0; i < allMessages.length; i++){
-      //   console.log(allMessages[i].loc)
-      //   if (allMessages[i].loc == $rootScope.city) {
-      //     $scope.localMessages.push(allMessages[i])
-      //   }
-      // }
-      // $scope.allMessages = allMessages;
-      socket.syncUpdates(thisTeamSing, $scope.localMessages)
-      console.log($scope.localMessages)
-    });
 
     $scope.addMessage = function () {
       if($scope.newMessage === '') {
