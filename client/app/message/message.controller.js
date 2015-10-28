@@ -5,8 +5,10 @@ angular.module('daFansApp')
     var thisTeam = $routeParams.teamId
     var thisTeamSing = thisTeam.substring(0, thisTeam.length - 1);
     var thisTeamPlur = thisTeam.substr(0, 1).toUpperCase() + thisTeam.substr(1);
+    var lastWeek = moment().subtract(7, 'days').startOf('day').format();
     $scope.localMessages = [];
     $scope.team = thisTeamPlur
+    console.log(lastWeek)
 
     $http.get('/api/' + thisTeam).success(function(allMessages) {
       $scope.arrangeComments(allMessages)
@@ -25,7 +27,7 @@ angular.module('daFansApp')
     $scope.arrangeComments = function (comments) {
       for (var i = 0; i < comments.length; i++){
         console.log(comments[i].loc)
-        if (comments[i].loc == $rootScope.city) {
+        if (comments[i].loc == $rootScope.city && comments[i].time > lastWeek) {
           $scope.localMessages.push(comments[i])
         }
       }
