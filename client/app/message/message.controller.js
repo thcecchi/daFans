@@ -9,13 +9,39 @@ angular.module('daFansApp')
     $scope.localMessages = [];
     $scope.team = thisTeamPlur
 
-    $http.get('/api/' + thisTeam).success(function(allMessages) {
-      $scope.arrangeComments(allMessages)
-      socket.syncUpdates(thisTeamSing, $scope.localMessages)
-      console.log($scope.localMessages)
-    }).finally(function() {
-      $scope.startAtBottom()
-    })
+    if(!$rootScope.city) {
+      $geolocation.getCurrentPosition({
+        timeout: 60000
+      }).then(function(position) {
+            var lat = position.coords.latitude
+            var lng = position.coords.longitude
+
+            geoService.getLocationStats(lat, lng).success(function(data) {
+              // $("#loading-screen").addClass('hide')
+              $rootScope.city = data.results[0].address_components[3].short_name
+              console.log($rootScope.city)
+            })
+          }).then(function() {
+            $http.get('/api/' + thisTeam).success(function(allMessages) {
+              $scope.arrangeComments(allMessages)
+              socket.syncUpdates(thisTeamSing, $scope.localMessages)
+              console.log($scope.localMessages)
+            }).finally(function() {
+              $("#loading-screen").addClass('hide')
+              $scope.startAtBottom()
+            })
+          })
+    }
+
+    else {
+      $http.get('/api/' + thisTeam).success(function(allMessages) {
+        $scope.arrangeComments(allMessages)
+        socket.syncUpdates(thisTeamSing, $scope.localMessages)
+        console.log($scope.localMessages)
+      }).finally(function() {
+        $scope.startAtBottom()
+      })
+    }
 
     $scope.startAtBottom = function () {
       var element = document.getElementById("message-box");

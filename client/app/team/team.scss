@@ -64,8 +64,17 @@
     color: chartreuse;
     display: block;
     text-align: center;
+    // margin-top: 25%;
+    z-index: 999999999999;
+  }
+
+  #loading-icon {
+    height: 100px;
+    width: 100px;
     margin-top: 25%;
     z-index: 999999999999;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -73,7 +82,7 @@
     position: relative;
     color: #000;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    // text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .team-logo {
@@ -100,7 +109,7 @@
 
   &.hero-unit  {
     // background: #fff;
-    border-bottom: 1px dashed #FB4F14;
+    border-bottom: 2px solid #FB4F14;
     color: #FB4F14;
   }
 
