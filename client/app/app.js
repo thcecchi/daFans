@@ -76,5 +76,4 @@ angular.module('daFansApp', [
               })
             })
 
-
   }]);
