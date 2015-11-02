@@ -3,6 +3,7 @@
 angular.module('daFansApp')
   .controller('MessageCtrl', function (geoService, $scope, $http, socket, $geolocation, $routeParams, $rootScope, moment) {
     var thisTeam = $routeParams.teamId
+    var thisTeamSing = thisTeam.substring(0, thisTeam.length - 1);
     var thisTeamPlur = thisTeam.substr(0, 1).toUpperCase() + thisTeam.substr(1);
     var lastWeek = moment().subtract(7, 'days').startOf('day').format();
     $rootScope.localMessages = [];
