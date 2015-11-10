@@ -1,17 +1,21 @@
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <div id="loading-screen">
-  <img id="loading-icon" src="../../assets/images/Football_Icon.svg" alt="loading icon" />
-  <p>
-    Loading...
-  </p>
+  <div class="loading-assets">
+    <img id="loading-icon" src="../../assets/images/Football_Icon.svg" alt="loading icon" />
+    <p>
+      Loading...
+    </p>
+  </div>
 </div>
 <div class="app-body">
   <header class="hero-unit {{this.team}}" id="banner">
-    <!-- <div class="container"> -->
-      <h1 id="logo">DaaFans</h1>
-      <h3 class="header-copy">{{this.city}} / {{this.team}}</h3>
-      <button id="message-button" type="button" name="button" ng-click="revealForm()"><span class="plus-icon">+</span></button>
-    <!-- </div> -->
+    <div class="row">
+      <h1 id="logo" class="col-md-2">DaaFans</h1>
+      <div class="city-and-button col-md-8">
+        <h3 class="header-copy">{{this.city}} / {{this.team}}</h3>
+        <button id="message-button" class="{{this.team}}" type="button" name="button" ng-click="revealForm()"><span class="plus-icon {{this.team}}">+</span></button>
+      </div>
+    </div>
   </header>
 
   <div class="form-container col-md-6 col-md-offset-3">
@@ -32,7 +36,7 @@
     <div id="message-box" class="col-md-10 col-lg-10 col-sm-10">
 
       <ul id="message-container" ng-init="startAtBottom()">
-        <li class="message-item" ng-repeat="message in this.localMessages">
+        <li class="message-item {{this.team}}" ng-repeat="message in this.localMessages">
           <p>{{message.message}}</p>
           <span class="timestamp" am-time-ago="message.time"></span>
         </li>

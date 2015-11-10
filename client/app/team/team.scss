@@ -10,7 +10,7 @@
 
   #logo {
     display: inline-block;
-
+    margin-left: 40px;
   }
 
   .header-copy {
@@ -27,14 +27,13 @@
     display: inline-block;
     width: 50px;
     height: 50px;
-    border: 2px solid #FB4F14;
+    // border: 2px solid #FB4F14;
     border-radius: 500px;
     background: #fff;
     margin: 0;
     padding: 0;
     color: #fff;
     letter-spacing: 0;
-    // font-size: 2em;
     margin-left: 10%;
     margin-top: 3%;
     z-index: 99999999999999999;
@@ -47,7 +46,7 @@
     -webkit-transition: all .25s ease;
     -o-transition: all .25s ease;
     transition: all .25s ease;
-    color: #FB4F14;
+    // color: #FB4F14;
 
     &.active {
       -moz-transform: rotate(45deg);
@@ -66,22 +65,32 @@
   z-index: 9999999;
   background-color: #fff;
 
-  p {
-    font-size: 4em;
-    color: chartreuse;
-    display: block;
-    text-align: center;
-    // margin-top: 25%;
-    z-index: 999999999999;
-  }
+  .loading-assets {
+      margin-top: 15%;
 
-  #loading-icon {
-    height: 100px;
-    width: 100px;
-    margin-top: 25%;
-    z-index: 999999999999;
-    display: block;
-    margin: 0 auto;
+    p {
+      font-size: 4em;
+      font-family: 'Lato', sans-serif;
+      color: #000;
+      display: block;
+      text-align: center;
+      z-index: 999999999999;
+    }
+
+    #loading-icon {
+      height: 100px;
+      width: 100px;
+      z-index: 999999999999;
+      display: block;
+      margin: 0 auto;
+      -webkit-animation:spin 2s ease-out infinite;
+      -moz-animation:spin 2s ease-out infinite;
+      animation:spin 2s ease-out infinite;
+
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    }
   }
 }
 
@@ -115,7 +124,6 @@
 .Bengals  {
 
   &.hero-unit  {
-    // background: #fff;
     border-bottom: 2px solid #FB4F14;
     color: #FB4F14;
   }
@@ -126,12 +134,23 @@
       color: #FB4F14;
     }
   }
+
+  &#message-button {
+    border: 2px solid #FB4F14;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(251, 79, 20, .5);
+  }
+
+  &.plus-icon {
+    color: #FB4F14;
+  }
 }
 
 .Ravens  {
 
   &.hero-unit  {
-    background: #fff;
     border-bottom: 2px solid #241773;
     color: #241773;
   }
@@ -139,15 +158,27 @@
   &#submit-btn {
 
     &:hover {
-      color: #9E7C0C;
+      color: #241773;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #241773;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(36, 23, 115, .5);
+  }
+
+  &.plus-icon {
+    color: #241773;
   }
 }
 
 .Browns  {
 
   &.hero-unit  {
-    background: #A5ACAF;
+    border-bottom: 2px solid #FB4F14;
     color: #FB4F14;
   }
 
@@ -157,57 +188,51 @@
       color: #FB4F14;
     }
   }
+
+  &#message-button {
+    border: 2px solid #FB4F14;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(251, 71, 20, .5);
+  }
+
+  &.plus-icon {
+    color: #FB4F14;
+  }
 }
 
 .Bears  {
 
   &.hero-unit  {
-    background: #0B162A;
-    color: #C83803;
+    border-bottom: 2px solid #0B162A;
+    color: #0B162A;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #C83803;
+      color: #0B162A;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #0B162A;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(11, 22, 42, .5);
+  }
+
+  &.plus-icon {
+    color: #0B162A;
   }
 }
 
 .Steelers  {
 
   &.hero-unit  {
-    background: #FFB612;
-    color: #000;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #000;
-    }
-  }
-}
-
-.Lions  {
-
-  &.hero-unit  {
-    background: #B0B7BC;
-    color: #005A8B;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #005A8B;
-    }
-  }
-}
-
-.Packers  {
-
-  &.hero-unit  {
-    background: #203731;
+    border-bottom: 2px solid #FFB612;
     color: #FFB612;
   }
 
@@ -217,42 +242,133 @@
       color: #FFB612;
     }
   }
+
+  &#message-button {
+    border: 2px solid #FFB612;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(255, 182, 18, .5);
+  }
+
+  &.plus-icon {
+    color: #FFB612;
+  }
 }
 
-.Vikings  {
+.Lions  {
 
   &.hero-unit  {
-    background: #4F2683;
-    color: #FFC62F;
+    border-bottom: 2px solid #005A8B;
+    color: #005A8B;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #FFC62F;
+      color: #005A8B;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #005A8B;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 90, 139, .5);
+  }
+
+  &.plus-icon {
+    color: #005A8B;
+  }
+}
+
+.Packers  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #203731;
+    color: #203731;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #203731;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #203731;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(32, 55, 49, .5);
+  }
+
+  &.plus-icon {
+    color: #203731;
+  }
+}
+
+.Vikings  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #4F2683;
+    background: #4F2683;
+    color: #4F2683;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #4F2683;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #4F2683;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(79, 38, 131, .5);
+  }
+
+  &.plus-icon {
+    color: #4F2683;
   }
 }
 
 .Texans  {
 
   &.hero-unit  {
-    background: #A71930;
-    color: #03202F;
+    border-bottom: 2px solid #A71930;
+    color: #A71930;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #03202F;
+      color: #A71930;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #A71930;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(167, 25, 48, .5);
+  }
+
+  &.plus-icon {
+    color: #A71930;
   }
 }
 
 .Colts  {
 
   &.hero-unit  {
-    background: #A5ACAF;
+    border-bottom: 2px solid #002C5F;
     color: #002C5F;
   }
 
@@ -262,27 +378,240 @@
       color: #002C5F;
     }
   }
+
+  &#message-button {
+    border: 2px solid #002C5F;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 44, 95, .5);
+  }
+
+  &.plus-icon {
+    color: #002C5F;
+  }
 }
 
 .Jaguars  {
 
   &.hero-unit  {
-    background: #006778;
-    color: #D7A22A;
+    border-bottom: 2px solid #006778;
+    color: #006778;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #D7A22A;
+      color: #006778;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #006778;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 103, 120, .5);
+  }
+
+  &.plus-icon {
+    color: #006778;
   }
 }
 
 .Titans  {
 
   &.hero-unit  {
-    background: #4B92DB;
+    border-bottom: 2px solid #4B92DB;
+    color: #4B92DB;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #4B92DB;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #4B92DB;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(75, 146, 219, .5);
+  }
+
+  &.plus-icon {
+    color: #4B92DB;
+  }
+}
+
+.Falcons  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #A71930;
+    color: #A71930;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #A71930;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #A71930;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(167, 45, 28, .5);
+  }
+
+  &.plus-icon {
+    color: #A71930;
+  }
+}
+
+.Panthers  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #0085CA;
+    color: #0085CA;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #0085CA;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #0085CA;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 133, 202, .5);
+  }
+
+  &.plus-icon {
+    color: #0085CA;
+  }
+}
+
+.Saints  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #9F8958;
+    color: #9F8958;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #9F8958;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #9F8958;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(159, 137, 88, .5);
+  }
+
+  &.plus-icon {
+    color: #9F8958;
+  }
+}
+
+.Bucs  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #D50A0A;
+    color: #D50A0A;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #D50A0A;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #D50A0A;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(213, 10, 10, .5);
+  }
+
+  &.plus-icon {
+    color: #D50A0A;
+  }
+}
+
+.Bills  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #00338D;
+    color: #00338D;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #00338D;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #00338D;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 51, 141, .5);
+  }
+
+  &.plus-icon {
+    color: #00338D;
+  }
+}
+
+.Dolphins  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #008E97;
+    color: #008E97;
+  }
+
+  &#submit-btn {
+
+    &:hover {
+      color: #008E97;
+    }
+  }
+
+  &#message-button {
+    border: 2px solid #008E97;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 142, 151, .5);
+  }
+
+  &.plus-icon {
+    color: #008E97;
+  }
+}
+
+.Patriots  {
+
+  &.hero-unit  {
+    border-bottom: 2px solid #002244;
     color: #002244;
   }
 
@@ -292,236 +621,238 @@
       color: #002244;
     }
   }
-}
 
-.Falcons  {
-
-  &.hero-unit  {
-    background: #A71930;
-    color: #000000;
+  &#message-button {
+    border: 2px solid #002244;
   }
 
-  &#submit-btn {
-
-    &:hover {
-      color: #000000;
-    }
-  }
-}
-
-.Panthers  {
-
-  &.hero-unit  {
-    background: #fff;
-    border-bottom: 2px solid #0085CA;
-    color: #0085CA;
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 34, 68, .5);
   }
 
-  &#submit-btn {
-
-    &:hover {
-      color: #000000;
-    }
-  }
-}
-
-.Saints  {
-
-  &.hero-unit  {
-    background: #9F8958;
-    color: #000000;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #000000;
-    }
-  }
-}
-
-.Bucs  {
-
-  &.hero-unit  {
-    background: #D50A0A;
-    color: #34302B;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #34302B;
-    }
-  }
-}
-
-.Bills  {
-
-  &.hero-unit  {
-    background: #00338D;
-    color: #C60C30;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #C60C30;
-    }
-  }
-}
-
-.Dolphins  {
-
-  &.hero-unit  {
-    background: #008E97;
-    color: #F58220;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #F58220;
-    }
-  }
-}
-
-.Patriots  {
-
-  &.hero-unit  {
-    background: #002244;
-    color: #C60C30;
-  }
-
-  &#submit-btn {
-
-    &:hover {
-      color: #C60C30;
-    }
+  &.plus-icon {
+    color: #002244;
   }
 }
 
 .Jets  {
 
   &.hero-unit  {
-    background: #203731;
-    color: #fff;
+    border-bottom: 2px solid #203731;
+    color: #203731;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #fff;
+      color: #203731;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #203731;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(159, 137, 88, .5);
+  }
+
+  &.plus-icon {
+    color: #203731;
   }
 }
 
 .Cowboys  {
 
   &.hero-unit  {
-    background: #002244;
-    color: #B0B7BC;
+    border-bottom: 2px solid #002244;
+    color: #002244;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #B0B7BC;
+      color: #002244;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #002244;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 34, 68, .5);
+  }
+
+  &.plus-icon {
+    color: #002244;
   }
 }
 
 .Giants  {
 
   &.hero-unit  {
-    background: #0B2265;
-    color: #A5ACAF;
+    border-bottom: 2px solid #0B2265;
+    color: #0B2265;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #A5ACAF;
+      color: #0B2265;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #0B2265;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(11, 34, 101, .5);
+  }
+
+  &.plus-icon {
+    color: #0B2265;
   }
 }
 
 .Eagles  {
 
   &.hero-unit  {
-    background: #004953;
-    color: #A5ACAF;
+    border-bottom: 2px solid #004953;
+    color: #004953;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #A5ACAF;
+      color: #004953;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #004953;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 73, 83, .5);
+  }
+
+  &.plus-icon {
+    color: #004953;
   }
 }
 
 .Redskins  {
 
   &.hero-unit  {
-    background: #FFB612;
-    color: #5B2B2F;
+    border-bottom: 2px solid #773141;
+    color: #773141;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #5B2B2F;
+      color: #773141;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #773141;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(119, 49, 65, .5);
+  }
+
+  &.plus-icon {
+    color: #773141;
   }
 }
 
 .Broncos  {
 
   &.hero-unit  {
-    background: #FB4F14;
-    color: #fff;
+    border-bottom: 2px solid #FB4F14;
+    color: #FB4F14;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #fff;
+      color: #FB4F14;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #FB4F14;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(251, 79, 20, .5);
+  }
+
+  &.plus-icon {
+    color: #FB4F14;
   }
 }
 
 .Chiefs  {
 
   &.hero-unit  {
-    background: #E31837;
-    color: #000;
+    border-bottom: 2px solid #E31837;
+    color: #E31837;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #000;
+      color: #E31837;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #E31837;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(227, 24, 55, .5);
+  }
+
+  &.plus-icon {
+    color: #E31837;
   }
 }
 
 .Raiders  {
 
   &.hero-unit  {
-    background: #000;
-    color: #A5ACAF;
+    border-bottom: 2px solid #000;
+    color: #000;
   }
 
   &#submit-btn {  &:hover {
       color: #A5ACAF;
     }
   }
+
+  &#message-button {
+    border: 2px solid #A5ACAF;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 0, 0, .5);
+  }
+
+  &.plus-icon {
+    color: #000;
+  }
 }
 
 .Chargers  {
 
   &.hero-unit  {
-    background: #FFB612;
+    border-bottom: 2px solid #0073CF;
     color: #0073CF;
   }
 
@@ -531,64 +862,124 @@
       color: #0073CF;
     }
   }
+
+  &#message-button {
+    border: 2px solid #0073CF;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(0, 115, 207, .5);
+  }
+
+  &.plus-icon {
+    color: #0073CF;
+  }
 }
 
 .Cardinals  {
 
   &.hero-unit  {
-    background: #97233F;
-    color: #000;
+    border-bottom: 2px solid #97233F;
+    color: #97233F;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #000;
+      color: #97233F;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #97233F;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(151, 35, 63, .5);
+  }
+
+  &.plus-icon {
+    color: #97233F;
   }
 }
 
 .Niners  {
 
   &.hero-unit  {
-    background: #AA0000;
-    color: #000;
+    border-bottom: 2px solid #AA0000;
+    color: #AA0000;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #000;
+      color: #AA0000;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #AA0000;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(170, 0, 0, .5);
+  }
+
+  &.plus-icon {
+    color: #AA0000;
   }
 }
 
 .Seahawks  {
 
   &.hero-unit  {
-    background: #69BE28;
-    color: #002244;
+    border-bottom: 2px solid #69BE28;
+    color: #69BE28;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #002244;
+      color: #69BE28;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #69BE28;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(105, 190, 40, .5);
+  }
+
+  &.plus-icon {
+    color: #69BE28;
   }
 }
 
 .Rams  {
 
   &.hero-unit  {
-    background: #B3995D;
-    color: #002244;
+    border-bottom: 2px solid #B3995D;
+    color: #B3995D;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #002244;
+      color: #B3995D;
     }
+  }
+
+  &#message-button {
+    border: 2px solid #B3995D;
+  }
+
+  &.message-item {
+    border-bottom: 2px solid rgba(179, 153, 93, .5);
+  }
+
+  &.plus-icon {
+    color: #B3995D;
   }
 }

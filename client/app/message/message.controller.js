@@ -18,12 +18,10 @@ angular.module('daFansApp')
         $scope.arrangeComments(allMessages)
         socket.syncUpdates(thisTeamSing, $scope.localMessages)
         console.log($scope.localMessages)
-      }).finally(function() {
-        $scope.startAtBottom()
       })
     }
 
-    $scope.startAtBottom = function () {
+    $rootScope.startAtBottom = function () {
       var element = document.getElementById("message-box");
       element.scrollTop = element.scrollHeight;
       console.log('bottom of message-box!')
@@ -47,14 +45,14 @@ angular.module('daFansApp')
                                        loc: $rootScope.city,
                                        time: new Date()
                                      }).then(function () {
-                                       $scope.startAtBottom()
+                                       $rootScope.startAtBottom()
                                      });
       $scope.newMessage = '';
       $scope.revealForm();
     };
 
     $scope.revealForm = function () {
-      $scope.startAtBottom()
+      $rootScope.startAtBottom()
       $('.form-container').toggleClass('active');
       $('.plus-icon').toggleClass('active');
       $('#message-box').toggleClass('faded');

@@ -28,9 +28,9 @@ angular.module('daFansApp')
               $rootScope.arrangeComments(allMessages)
               socket.syncUpdates(thisTeamSing, $rootScope.localMessages)
               console.log($rootScope.localMessages)
+              $rootScope.startAtBottom()
             }).finally(function() {
               $("#loading-screen").addClass('hide')
-              // $scope.startAtBottom()
             })
           })
     }
