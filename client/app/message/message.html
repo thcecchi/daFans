@@ -10,9 +10,11 @@
 <div class="app-body">
   <header class="hero-unit {{this.team}}" id="banner">
     <div class="row">
-      <h1 id="logo" class="col-md-2">DaaFans</h1>
-      <div class="city-and-button col-md-8">
+      <div class="city-and-button col-md-8 col-sm-12">
+        <h1 id="logo" data-toggle="offcanvas" data-target="#subnav" data-canvas="body" class="btn col-md-2">DaaFans</h1>
         <h3 class="header-copy">{{this.city}} / {{this.team}}</h3>
+      </div>
+      <div class="btn-container col-md-offset-1 col-md-1 col-sm-12">
         <button id="message-button" class="{{this.team}}" type="button" name="button" ng-click="revealForm()"><span class="plus-icon {{this.team}}">+</span></button>
       </div>
     </div>
@@ -25,7 +27,7 @@
     </form>
   </div>
 
-    <div id="subnav" class="{{this.team}} col-md-2 col-lg-2 col-sm-2">
+    <div id="subnav" role="navigation" class="navmenu navmenu-default navmenu-fixed-left offcanvas {{this.team}} col-md-2 col-lg-2 col-sm-2">
       <div class="teamsList" ng-controller="TeamCtrl">
         <ul ng-repeat="team in this.allTeams">
           <li><a href="/team/{{team.teamId}}">{{team.name}}</a></li>
@@ -33,7 +35,7 @@
       </div>
     </div>
 
-    <div id="message-box" class="col-md-10 col-lg-10 col-sm-10">
+    <div id="message-box" class="col-md-10 col-lg-10 col-sm-12">
 
       <ul id="message-container" ng-init="startAtBottom()">
         <li class="message-item {{this.team}}" ng-repeat="message in this.localMessages">

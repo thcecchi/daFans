@@ -3,49 +3,54 @@
 }
 
 #banner {
-  max-height: 10vh;
   box-shadow: 0 0 10px 10px #ffffff;
   background: #fff;
   z-index: 9999;
+  position: relative;
 
   #logo {
     display: inline-block;
     margin-left: 40px;
+    font-family: 'Roboto Slab', sans-serif;
+    letter-spacing: .5px;
   }
 
   .header-copy {
     display: inline-block;
     font-size: 2.25em;
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
     text-align: right;
     margin-bottom: 20px;
+    font-weight: 300;
   }
 
   #message-button {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    // border: 2px solid #FB4F14;
-    border-radius: 500px;
-    background: #fff;
+    // width: 100%;
+    height: 100%;
+    border-radius: 3px;
     margin: 0;
     padding: 0;
     color: #fff;
     letter-spacing: 0;
-    margin-left: 10%;
-    margin-top: 3%;
     z-index: 99999999999999999;
-    position: fixed;
+    margin-top: 20px;
   }
 
   .plus-icon {
-    display: inline-block;
+    display: block;
     -moz-transition: all .25s ease;
     -webkit-transition: all .25s ease;
     -o-transition: all .25s ease;
     transition: all .25s ease;
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
     // color: #FB4F14;
 
     &.active {
@@ -95,7 +100,7 @@
 }
 
 .hero-unit {
-    position: relative;
+    // position: relative;
     color: #000;
     text-align: center;
     // text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -124,7 +129,7 @@
 .Bengals  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #FB4F14;
+    // border-bottom: 2px solid #FB4F14;
     color: #FB4F14;
   }
 
@@ -136,7 +141,7 @@
   }
 
   &#message-button {
-    border: 2px solid #FB4F14;
+    background: #FB4F14;
   }
 
   &.message-item {
@@ -144,7 +149,7 @@
   }
 
   &.plus-icon {
-    color: #FB4F14;
+    color: #ffffff;
   }
 }
 
@@ -981,5 +986,19 @@
 
   &.plus-icon {
     color: #B3995D;
+  }
+}
+
+@media (max-width: 992px) {
+  #message-button {
+    border-radius: 0px !important;
+  }
+
+  .header-copy {
+    margin: 0 !important;
+  }
+
+  #banner {
+    margin-bottom: 20px;
   }
 }

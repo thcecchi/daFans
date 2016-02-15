@@ -23,8 +23,9 @@
 
     li {
       list-style-type: none;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Roboto', sans-serif;
       letter-spacing: 1px;
+      font-weight: 300;
 
       a {
         color: #000;
@@ -83,10 +84,12 @@ button {
       // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
       p {
-        font-family: 'Merriweather';
+        font-family: 'Roboto';
         font-size: 1.25em;
         line-height: 1.65em;
         margin-top: -5px;
+        letter-spacing: .5px;
+        font-weight: 300;
         // color: #008CA8;
       }
     }
@@ -135,4 +138,8 @@ button {
 
 .timestamp {
   opacity: .7;
+}
+
+@media (max-width: 992px) {
+
 }
