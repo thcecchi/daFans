@@ -11,23 +11,23 @@
   <header class="hero-unit {{this.team}}" id="banner">
     <div class="row">
       <div class="city-and-button col-md-8 col-sm-12">
-        <h1 id="logo" data-toggle="offcanvas" data-target="#subnav" data-canvas="body" class="btn col-md-2">DaaFans</h1>
+        <h1 id="logo" data-toggle="offcanvas" data-target="#subnav" data-canvas="body" class="col-md-2">DaaFans</h1>
         <h3 class="header-copy">{{this.city}} / {{this.team}}</h3>
       </div>
-      <div class="btn-container col-md-offset-1 col-md-1 col-sm-12">
+      <div class="btn-container col-md-offset-1 col-md-1">
         <button id="message-button" class="{{this.team}}" type="button" name="button" ng-click="revealForm()"><span class="plus-icon {{this.team}}">+</span></button>
       </div>
     </div>
   </header>
 
-  <div class="form-container col-md-6 col-md-offset-3">
+  <div class="form-container">
     <form class="message-form">
-        <textarea id="message-editor" class="col-md-offset-1 col-md-10 col-lg-10 col-sm-10" placeholder="Add a new message here." ng-model="newMessage"></textarea>
-        <a type="submit" id="submit-btn" class="col-md-12 col-lg-12 col-sm-12 {{this.team}}" ng-click="addMessage()">SEND</a>
+        <textarea id="message-editor" class="" placeholder="Add a new message here." ng-model="newMessage"></textarea>
+        <a type="submit" id="submit-btn" class="{{this.team}}" ng-click="addMessage()">SEND</a>
     </form>
   </div>
 
-    <div id="subnav" role="navigation" class="navmenu navmenu-default navmenu-fixed-left offcanvas {{this.team}} col-md-2 col-lg-2 col-sm-2">
+    <div id="subnav" role="navigation" class="navmenu navmenu-default navmenu-fixed-left offcanvas {{this.team}}">
       <div class="teamsList" ng-controller="TeamCtrl">
         <ul ng-repeat="team in this.allTeams">
           <li><a href="/team/{{team.teamId}}">{{team.name}}</a></li>
@@ -35,8 +35,7 @@
       </div>
     </div>
 
-    <div id="message-box" class="col-md-10 col-lg-10 col-sm-12">
-
+    <div id="message-box" class="col-md-12">
       <ul id="message-container" ng-init="startAtBottom()">
         <li class="message-item {{this.team}}" ng-repeat="message in this.localMessages">
           <p>{{message.message}}</p>
