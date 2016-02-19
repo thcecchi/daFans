@@ -59,7 +59,6 @@ angular.module('daFansApp')
     }
 
     $scope.deleteMessage = function (message) {
-
       if (message.time > moment().diff('days'))
       console.log()
       $http.delete('/api/messages/' + message._id);
