@@ -6,14 +6,13 @@
   box-shadow: 0 0 10px 10px #ffffff;
   background: #fff;
   z-index: 9999;
-  position: fixed;
+  position: relative;;
   top: 0;
   width: 100%;
   display: block;
 
   #logo {
     display: inline-block;
-    margin-left: 40px;
     font-family: 'Roboto Slab', sans-serif;
     letter-spacing: .5px;
     cursor: pointer;
@@ -21,7 +20,7 @@
 
   .header-copy {
     display: inline-block;
-    font-size: 2.25em;
+    font-size: 1.3em;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     text-align: right;
@@ -73,6 +72,7 @@
   position: absolute;
   z-index: 9999999;
   background-color: #fff;
+  font-weight: 100;
 
   .loading-assets {
       margin-top: 15%;
@@ -114,8 +114,15 @@
   width: 100px;
   height: 100px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+}
+
+.home-team-name {
+  color: #000;
+  text-align: center;
+  font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
 }
 
 .footer {
@@ -149,7 +156,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(251, 79, 20, .5);
+    border-bottom: 1px solid rgba(251, 79, 20, .5);
   }
 
   &.plus-icon {
@@ -160,7 +167,7 @@
 .Ravens  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #241773;
+    border-bottom: 1px solid #241773;
     color: #241773;
   }
 
@@ -176,7 +183,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(36, 23, 115, .5);
+    border-bottom: 1px solid rgba(36, 23, 115, .5);
   }
 
   &.plus-icon {
@@ -187,7 +194,7 @@
 .Browns  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #FB4F14;
+    border-bottom: 1px solid #FB4F14;
     color: #FB4F14;
   }
 
@@ -203,7 +210,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(251, 71, 20, .5);
+    border-bottom: 1px solid rgba(251, 71, 20, .5);
   }
 
   &.plus-icon {
@@ -214,7 +221,7 @@
 .Bears  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #0B162A;
+    border-bottom: 1px solid #0B162A;
     color: #0B162A;
   }
 
@@ -230,7 +237,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(11, 22, 42, .5);
+    border-bottom: 1px solid rgba(11, 22, 42, .5);
   }
 
   &.plus-icon {
@@ -241,7 +248,7 @@
 .Steelers  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #FFB612;
+    border-bottom: 1px solid #FFB612;
     color: #FFB612;
   }
 
@@ -257,7 +264,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(255, 182, 18, .5);
+    border-bottom: 1px solid rgba(255, 182, 18, .5);
   }
 
   &.plus-icon {
@@ -268,7 +275,7 @@
 .Lions  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #005A8B;
+    border-bottom: 1px solid #005A8B;
     color: #005A8B;
   }
 
@@ -284,7 +291,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 90, 139, .5);
+    border-bottom: 1px solid rgba(0, 90, 139, .5);
   }
 
   &.plus-icon {
@@ -295,7 +302,7 @@
 .Packers  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #203731;
+    border-bottom: 1px solid #203731;
     color: #203731;
   }
 
@@ -311,7 +318,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(32, 55, 49, .5);
+    border-bottom: 1px solid rgba(32, 55, 49, .5);
   }
 
   &.plus-icon {
@@ -322,7 +329,7 @@
 .Vikings  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #4F2683;
+    border-bottom: 1px solid #4F2683;
     background: #4F2683;
     color: #4F2683;
   }
@@ -339,7 +346,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(79, 38, 131, .5);
+    border-bottom: 1px solid rgba(79, 38, 131, .5);
   }
 
   &.plus-icon {
@@ -350,7 +357,7 @@
 .Texans  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #A71930;
+    border-bottom: 1px solid #A71930;
     color: #A71930;
   }
 
@@ -366,7 +373,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(167, 25, 48, .5);
+    border-bottom: 1px solid rgba(167, 25, 48, .5);
   }
 
   &.plus-icon {
@@ -377,7 +384,7 @@
 .Colts  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #002C5F;
+    border-bottom: 1px solid #002C5F;
     color: #002C5F;
   }
 
@@ -393,7 +400,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 44, 95, .5);
+    border-bottom: 1px solid rgba(0, 44, 95, .5);
   }
 
   &.plus-icon {
@@ -404,7 +411,7 @@
 .Jaguars  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #006778;
+    border-bottom: 1px solid #006778;
     color: #006778;
   }
 
@@ -420,7 +427,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 103, 120, .5);
+    border-bottom: 1px solid rgba(0, 103, 120, .5);
   }
 
   &.plus-icon {
@@ -431,7 +438,7 @@
 .Titans  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #4B92DB;
+    border-bottom: 1px solid #4B92DB;
     color: #4B92DB;
   }
 
@@ -447,7 +454,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(75, 146, 219, .5);
+    border-bottom: 1px solid rgba(75, 146, 219, .5);
   }
 
   &.plus-icon {
@@ -458,7 +465,7 @@
 .Falcons  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #A71930;
+    border-bottom: 1px solid #A71930;
     color: #A71930;
   }
 
@@ -474,7 +481,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(167, 45, 28, .5);
+    border-bottom: 1px solid rgba(167, 45, 28, .5);
   }
 
   &.plus-icon {
@@ -485,7 +492,7 @@
 .Panthers  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #0085CA;
+    border-bottom: 1px solid #0085CA;
     color: #0085CA;
   }
 
@@ -501,7 +508,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 133, 202, .5);
+    border-bottom: 1px solid rgba(0, 133, 202, .5);
   }
 
   &.plus-icon {
@@ -512,7 +519,7 @@
 .Saints  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #9F8958;
+    border-bottom: 1px solid #9F8958;
     color: #9F8958;
   }
 
@@ -528,7 +535,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(159, 137, 88, .5);
+    border-bottom: 1px solid rgba(159, 137, 88, .5);
   }
 
   &.plus-icon {
@@ -539,7 +546,7 @@
 .Bucs  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #D50A0A;
+    border-bottom: 1px solid #D50A0A;
     color: #D50A0A;
   }
 
@@ -555,7 +562,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(213, 10, 10, .5);
+    border-bottom: 1px solid rgba(213, 10, 10, .5);
   }
 
   &.plus-icon {
@@ -566,7 +573,7 @@
 .Bills  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #00338D;
+    border-bottom: 1px solid #00338D;
     color: #00338D;
   }
 
@@ -582,7 +589,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 51, 141, .5);
+    border-bottom: 1px solid rgba(0, 51, 141, .5);
   }
 
   &.plus-icon {
@@ -593,7 +600,7 @@
 .Dolphins  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #008E97;
+    border-bottom: 1px solid #008E97;
     color: #008E97;
   }
 
@@ -609,7 +616,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 142, 151, .5);
+    border-bottom: 1px solid rgba(0, 142, 151, .5);
   }
 
   &.plus-icon {
@@ -620,7 +627,7 @@
 .Patriots  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #002244;
+    border-bottom: 1px solid #002244;
     color: #002244;
   }
 
@@ -636,7 +643,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 34, 68, .5);
+    border-bottom: 1px solid rgba(0, 34, 68, .5);
   }
 
   &.plus-icon {
@@ -647,7 +654,7 @@
 .Jets  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #203731;
+    border-bottom: 1px solid #203731;
     color: #203731;
   }
 
@@ -663,7 +670,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(159, 137, 88, .5);
+    border-bottom: 1px solid rgba(159, 137, 88, .5);
   }
 
   &.plus-icon {
@@ -674,7 +681,7 @@
 .Cowboys  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #002244;
+    border-bottom: 1px solid #002244;
     color: #002244;
   }
 
@@ -690,7 +697,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 34, 68, .5);
+    border-bottom: 1px solid rgba(0, 34, 68, .5);
   }
 
   &.plus-icon {
@@ -701,7 +708,7 @@
 .Giants  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #0B2265;
+    border-bottom: 1px solid #0B2265;
     color: #0B2265;
   }
 
@@ -717,7 +724,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(11, 34, 101, .5);
+    border-bottom: 1px solid rgba(11, 34, 101, .5);
   }
 
   &.plus-icon {
@@ -728,7 +735,7 @@
 .Eagles  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #004953;
+    border-bottom: 1px solid #004953;
     color: #004953;
   }
 
@@ -744,7 +751,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 73, 83, .5);
+    border-bottom: 1px solid rgba(0, 73, 83, .5);
   }
 
   &.plus-icon {
@@ -755,7 +762,7 @@
 .Redskins  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #773141;
+    border-bottom: 1px solid #773141;
     color: #773141;
   }
 
@@ -771,7 +778,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(119, 49, 65, .5);
+    border-bottom: 1px solid rgba(119, 49, 65, .5);
   }
 
   &.plus-icon {
@@ -782,7 +789,7 @@
 .Broncos  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #FB4F14;
+    border-bottom: 1px solid #FB4F14;
     color: #FB4F14;
   }
 
@@ -798,7 +805,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(251, 79, 20, .5);
+    border-bottom: 1px solid rgba(251, 79, 20, .5);
   }
 
   &.plus-icon {
@@ -809,7 +816,7 @@
 .Chiefs  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #E31837;
+    border-bottom: 1px solid #E31837;
     color: #E31837;
   }
 
@@ -825,7 +832,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(227, 24, 55, .5);
+    border-bottom: 1px solid rgba(227, 24, 55, .5);
   }
 
   &.plus-icon {
@@ -836,7 +843,7 @@
 .Raiders  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
     color: #000;
   }
 
@@ -850,7 +857,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 0, 0, .5);
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
   }
 
   &.plus-icon {
@@ -861,7 +868,7 @@
 .Chargers  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #0073CF;
+    border-bottom: 1px solid #0073CF;
     color: #0073CF;
   }
 
@@ -877,7 +884,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(0, 115, 207, .5);
+    border-bottom: 1px solid rgba(0, 115, 207, .5);
   }
 
   &.plus-icon {
@@ -888,7 +895,7 @@
 .Cardinals  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #97233F;
+    border-bottom: 1px solid #97233F;
     color: #97233F;
   }
 
@@ -904,7 +911,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(151, 35, 63, .5);
+    border-bottom: 1px solid rgba(151, 35, 63, .5);
   }
 
   &.plus-icon {
@@ -915,7 +922,7 @@
 .Niners  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #AA0000;
+    border-bottom: 1px solid #AA0000;
     color: #AA0000;
   }
 
@@ -931,7 +938,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(170, 0, 0, .5);
+    border-bottom: 1px solid rgba(170, 0, 0, .5);
   }
 
   &.plus-icon {
@@ -942,7 +949,7 @@
 .Seahawks  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #69BE28;
+    border-bottom: 1px solid #69BE28;
     color: #69BE28;
   }
 
@@ -958,7 +965,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(105, 190, 40, .5);
+    border-bottom: 1px solid rgba(105, 190, 40, .5);
   }
 
   &.plus-icon {
@@ -969,7 +976,7 @@
 .Rams  {
 
   &.hero-unit  {
-    border-bottom: 2px solid #B3995D;
+    border-bottom: 1px solid #B3995D;
     color: #B3995D;
   }
 
@@ -985,7 +992,7 @@
   }
 
   &.message-item {
-    border-bottom: 2px solid rgba(179, 153, 93, .5);
+    border-bottom: 1px solid rgba(179, 153, 93, .5);
   }
 
   &.plus-icon {

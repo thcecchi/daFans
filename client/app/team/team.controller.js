@@ -2,7 +2,6 @@
 
 angular.module('daFansApp')
   .controller('TeamCtrl', function ($scope, $rootScope, $http, socket, $geolocation, $routeParams) {
-    $scope.message = 'Hello';
 
     var check4Teams = function() {
       if ($rootScope.city != undefined) {
