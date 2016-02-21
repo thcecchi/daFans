@@ -151,6 +151,23 @@ button {
   opacity: .7;
 }
 
+#reply-list {
+  padding-left: 1%;
+  padding-top: 1%;
+
+  .reply-item{
+    margin-bottom: 0 !important;
+  }
+
+  p {
+    font-family: 'Roboto';
+    font-size: 1em;
+    line-height: 1.65em;
+    letter-spacing: .5px;
+    font-weight: 300;
+  }
+}
+
 @media (max-width: 992px) {
 
 }

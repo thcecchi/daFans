@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('daFansApp')
-  .controller('MessageCtrl', function (geoService, $scope, $http, socket, $geolocation, $routeParams, $rootScope, moment) {
+  .controller('MessageCtrl', function (messageService, geoService, $scope, $http, socket, $geolocation, $routeParams, $rootScope, moment) {
     var thisTeam = $routeParams.teamId
     var thisTeamSing = thisTeam.substring(0, thisTeam.length - 1);
     var thisTeamPlur = thisTeam.substr(0, 1).toUpperCase() + thisTeam.substr(1);
     var lastWeek = moment().subtract(7, 'days').startOf('day').format();
+    var existingReplies
     $rootScope.localMessages = [];
     $scope.team = thisTeamPlur
 
@@ -51,28 +52,37 @@ angular.module('daFansApp')
       $scope.revealForm();
     };
 
-
     $scope.replyMessage = function () {
-      $http.get('/api/' + thisTeam + '/' + $scope.replyId).success(function(thisMessage) {
-        $scope.currentMessage = thisMessage
-      })
-      console.log($scope.currentMessage)
-
+      var messageId = $rootScope.replyId
       if($scope.newReply === '') {
         return;
       }
-      $http.put('/api/' + thisTeam + '/' + $scope.replyId, { replies:
-        {
-          reply: $scope.newReply,
-          replyTime: new Date()
-        }
 
+      var newReplyData = {
+        reply: $scope.newReply,
+        replyTime: new Date()
+      }
 
-                                     }).then(function () {
-                                       $rootScope.startAtBottom()
-                                     });
+      messageService.getReply(messageId).then(function(response) {
+        console.log(response.data)
+        existingReplies = response.data;
+        existingReplies.replies.push(newReplyData);
+      }).then(function() {
+          $scope.updateReply(messageId, existingReplies.replies);
+          socket.syncUpdates(thisTeamSing, $scope.localMessages)
+      }).then(function () {
+           $rootScope.startAtBottom()
+         });
       $scope.newReply = '';
       $scope.revealReplyForm();
+    };
+
+    $scope.getReplies = function (messageId) {
+      messageService.getReply(messageId)
+    };
+
+    $scope.updateReply = function (id, data) {
+      messageService.updateReplies(id, data);
     };
 
     $scope.revealForm = function () {
@@ -83,7 +93,7 @@ angular.module('daFansApp')
     }
 
     $scope.revealReplyForm = function (commentId) {
-      $scope.replyId = commentId
+      $rootScope.replyId = commentId
       $rootScope.startAtBottom()
       $('.reply-container').toggleClass('active');
       $('.plus-icon').toggleClass('active');

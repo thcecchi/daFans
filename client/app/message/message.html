@@ -47,8 +47,12 @@
           <p>{{message.message}}</p>
           <span class="timestamp" am-time-ago="message.time"></span>
           <a type="submit" id="reply-btn" class="{{this.team}}" ng-click="revealReplyForm(message._id)">Reply</a>
-          <p>{{message.replies.reply}}</p>
-          <span class="timestamp" am-time-ago="message.replies.replyTime"></span>
+          <ul id="reply-list">
+            <li class="reply-item" ng-repeat="reply in message.replies">
+              <p>{{reply.reply}}</p>
+              <span class="timestamp" am-time-ago="reply.replyTime"></span>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
