@@ -7,7 +7,8 @@ var BengalSchema = new Schema({
   message: String,
   loc: String,
   user: String,
-  time: String
+  time: String,
+  replies: []
 });
 
 module.exports = mongoose.model('Bengal', BengalSchema);

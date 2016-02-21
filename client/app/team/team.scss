@@ -147,12 +147,12 @@
   &#submit-btn {
 
     &:hover {
-      border: 2px solid #FB4F14;
+      color: 2px solid #FB4F14;
     }
   }
 
   &#message-button {
-    color: #FB4F14;
+    border: 2px solid #FB4F14;
   }
 
   &.message-item {
@@ -160,7 +160,7 @@
   }
 
   &.plus-icon {
-    color: #ffffff;
+    color: #FB4F14;
   }
 }
 

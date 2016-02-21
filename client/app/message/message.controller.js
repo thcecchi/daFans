@@ -51,9 +51,41 @@ angular.module('daFansApp')
       $scope.revealForm();
     };
 
+
+    $scope.replyMessage = function () {
+      $http.get('/api/' + thisTeam + '/' + $scope.replyId).success(function(thisMessage) {
+        $scope.currentMessage = thisMessage
+      })
+      console.log($scope.currentMessage)
+
+      if($scope.newReply === '') {
+        return;
+      }
+      $http.put('/api/' + thisTeam + '/' + $scope.replyId, { replies:
+        {
+          reply: $scope.newReply,
+          replyTime: new Date()
+        }
+
+
+                                     }).then(function () {
+                                       $rootScope.startAtBottom()
+                                     });
+      $scope.newReply = '';
+      $scope.revealReplyForm();
+    };
+
     $scope.revealForm = function () {
       $rootScope.startAtBottom()
       $('.form-container').toggleClass('active');
+      $('.plus-icon').toggleClass('active');
+      $('#message-box').toggleClass('faded');
+    }
+
+    $scope.revealReplyForm = function (commentId) {
+      $scope.replyId = commentId
+      $rootScope.startAtBottom()
+      $('.reply-container').toggleClass('active');
       $('.plus-icon').toggleClass('active');
       $('#message-box').toggleClass('faded');
     }

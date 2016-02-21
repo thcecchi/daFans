@@ -26,6 +26,12 @@
         <a type="submit" id="submit-btn" class="{{this.team}}" ng-click="addMessage()">Send</a>
     </form>
   </div>
+  <div class="reply-container">
+    <form class="message-form">
+        <textarea id="message-editor" class="" ng-model="newReply"></textarea>
+        <a type="submit" id="submit-btn" class="{{this.team}}" ng-click="replyMessage()">Reply</a>
+    </form>
+  </div>
 
     <div id="subnav" role="navigation" class="navmenu navmenu-default navmenu-fixed-left offcanvas {{this.team}}">
       <div class="teamsList" ng-controller="TeamCtrl">
@@ -40,6 +46,9 @@
         <li class="message-item {{this.team}}" ng-repeat="message in this.localMessages">
           <p>{{message.message}}</p>
           <span class="timestamp" am-time-ago="message.time"></span>
+          <a type="submit" id="reply-btn" class="{{this.team}}" ng-click="revealReplyForm(message._id)">Reply</a>
+          <p>{{message.replies.reply}}</p>
+          <span class="timestamp" am-time-ago="message.replies.replyTime"></span>
         </li>
       </ul>
     </div>
