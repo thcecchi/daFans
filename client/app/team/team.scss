@@ -72,14 +72,14 @@
   position: absolute;
   z-index: 9999999;
   background-color: #fff;
-  font-weight: 100;
 
   .loading-assets {
       margin-top: 15%;
 
     p {
       font-size: 4em;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Roboto Slab', sans-serif;
+      letter-spacing: .5px;
       color: #000;
       display: block;
       text-align: center;
