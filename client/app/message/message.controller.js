@@ -64,12 +64,11 @@ angular.module('daFansApp')
       }
 
       messageService.getReply(messageId).then(function(response) {
-        console.log(response.data)
         existingReplies = response.data;
         existingReplies.replies.push(newReplyData);
       }).then(function() {
-          $scope.updateReply(messageId, existingReplies.replies);
-          socket.syncUpdates(thisTeamSing, $scope.localMessages)
+          messageService.updateReplies(messageId, existingReplies.replies);
+          // socket.syncUpdates(thisTeamSing, $scope.localMessages)
       }).then(function () {
            $rootScope.startAtBottom()
          });
