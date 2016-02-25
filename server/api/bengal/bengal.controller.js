@@ -29,17 +29,46 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing bengal in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Bengal.findById(req.params.id, function (err, bengal) {
+//     if (err) { return handleError(res, err); }
+//     if(!bengal) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(bengal, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(bengal);
+//     });
+//   });
+// };
+
+// exports.update = function(req, res) {
+//   Bengal.findOne({_id: req.params.id}, function (err, bengal){
+//        if (err) {
+//           res.send(422,'update failed');
+//        } else {
+//           //update fields
+//           for (var field in Bengal.schema.paths) {
+//              if ((field !== '_id') && (field !== '__v')) {
+//                 if (req.body[field] !== undefined) {
+//                    bengal[field] = req.body[field];
+//                 }
+//              }
+//           }
+//           bengal.save();
+//        }
+//     });
+// };
+
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Bengal.findById(req.params.id, function (err, bengal) {
-    if (err) { return handleError(res, err); }
-    if(!bengal) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(bengal, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(bengal);
+  Bengal.findOne({_id: req.params.id}, function (err, bengal){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          bengal.replies = req.body.replies;
+          bengal.save();
+       }
     });
-  });
 };
 
 // Deletes a bengal from the DB.

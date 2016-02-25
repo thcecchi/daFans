@@ -6,7 +6,6 @@ angular.module('daFansApp')
     var thisTeamSing = thisTeam.substring(0, thisTeam.length - 1);
     var thisTeamPlur = thisTeam.substr(0, 1).toUpperCase() + thisTeam.substr(1);
     var lastWeek = moment().subtract(7, 'days').startOf('day').format();
-    var existingReplies
     $rootScope.localMessages = [];
     $scope.team = thisTeamPlur
 
@@ -44,7 +43,8 @@ angular.module('daFansApp')
       console.log($rootScope.city)
       $http.post('/api/' + thisTeam, { message: $scope.newMessage,
                                        loc: $rootScope.city,
-                                       time: new Date()
+                                       time: new Date(),
+                                       replies: []
                                      }).then(function () {
                                        $rootScope.startAtBottom()
                                      });
@@ -52,6 +52,8 @@ angular.module('daFansApp')
       $scope.revealForm();
     };
 
+    var existingReplies
+    var newData
     $scope.replyMessage = function () {
       var messageId = $rootScope.replyId
       if($scope.newReply === '') {
@@ -64,12 +66,10 @@ angular.module('daFansApp')
       }
 
       messageService.getReply(messageId).then(function(response) {
-        existingReplies = response.data;
-        existingReplies.replies.push(newReplyData);
-      }).then(function() {
-          messageService.updateReplies(messageId, existingReplies.replies);
-          // socket.syncUpdates(thisTeamSing, $scope.localMessages)
+        var replyResponse = response.data
+        messageService.updateReplies(messageId, replyResponse, newReplyData);
       }).then(function () {
+           socket.syncUpdates(thisTeamSing, $scope.localMessages)
            $rootScope.startAtBottom()
          });
       $scope.newReply = '';
