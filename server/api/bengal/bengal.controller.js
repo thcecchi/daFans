@@ -28,6 +28,7 @@ exports.create = function(req, res) {
   });
 };
 
+// THIS IS STANDARD ANGULAR-FULLSTACK UPDATE FUNCTION
 // Updates an existing bengal in the DB.
 // exports.update = function(req, res) {
 //   if(req.body._id) { delete req.body._id; }
@@ -42,6 +43,7 @@ exports.create = function(req, res) {
 //   });
 // };
 
+// THIS WILL UPDATE THE ENTIRE MONGOOSE MODEL
 // exports.update = function(req, res) {
 //   Bengal.findOne({_id: req.params.id}, function (err, bengal){
 //        if (err) {
@@ -60,6 +62,7 @@ exports.create = function(req, res) {
 //     });
 // };
 
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
   Bengal.findOne({_id: req.params.id}, function (err, bengal){
        if (err) {

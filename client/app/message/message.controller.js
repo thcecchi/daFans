@@ -86,9 +86,16 @@ angular.module('daFansApp')
 
     $scope.revealForm = function () {
       $rootScope.startAtBottom()
-      $('.form-container').toggleClass('active');
-      $('.plus-icon').toggleClass('active');
-      $('#message-box').toggleClass('faded');
+
+      if($('.reply-container').hasClass('active')) {
+        $scope.revealReplyForm()
+      }
+
+      else {
+        $('.form-container').toggleClass('active');
+        $('.plus-icon').toggleClass('active');
+        $('#message-box').toggleClass('faded');
+      }
     }
 
     $scope.revealReplyForm = function (commentId) {
