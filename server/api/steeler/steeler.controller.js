@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing steeler in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Steeler.findById(req.params.id, function (err, steeler) {
+//     if (err) { return handleError(res, err); }
+//     if(!steeler) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(steeler, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(steeler);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Steeler.findById(req.params.id, function (err, steeler) {
-    if (err) { return handleError(res, err); }
-    if(!steeler) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(steeler, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(steeler);
+  Steeler.findOne({_id: req.params.id}, function (err, steeler){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          steeler.replies = req.body.replies;
+          steeler.save();
+       }
     });
-  });
 };
 
 // Deletes a steeler from the DB.

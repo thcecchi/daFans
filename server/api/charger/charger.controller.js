@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing charger in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Charger.findById(req.params.id, function (err, charger) {
+//     if (err) { return handleError(res, err); }
+//     if(!charger) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(charger, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(charger);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Charger.findById(req.params.id, function (err, charger) {
-    if (err) { return handleError(res, err); }
-    if(!charger) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(charger, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(charger);
+  Charger.findOne({_id: req.params.id}, function (err, charger){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          charger.replies = req.body.replies;
+          charger.save();
+       }
     });
-  });
 };
 
 // Deletes a charger from the DB.

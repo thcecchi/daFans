@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing buccaneer in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Buccaneer.findById(req.params.id, function (err, buccaneer) {
+//     if (err) { return handleError(res, err); }
+//     if(!buccaneer) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(buccaneer, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(buccaneer);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Buccaneer.findById(req.params.id, function (err, buccaneer) {
-    if (err) { return handleError(res, err); }
-    if(!buccaneer) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(buccaneer, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(buccaneer);
+  Buccaneer.findOne({_id: req.params.id}, function (err, buccaneer){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          buccaneer.replies = req.body.replies;
+          buccaneer.save();
+       }
     });
-  });
 };
 
 // Deletes a buccaneer from the DB.

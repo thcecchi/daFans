@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing redskin in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Redskin.findById(req.params.id, function (err, redskin) {
+//     if (err) { return handleError(res, err); }
+//     if(!redskin) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(redskin, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(redskin);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Redskin.findById(req.params.id, function (err, redskin) {
-    if (err) { return handleError(res, err); }
-    if(!redskin) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(redskin, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(redskin);
+  Redskin.findOne({_id: req.params.id}, function (err, redskin){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          redskin.replies = req.body.replies;
+          redskin.save();
+       }
     });
-  });
 };
 
 // Deletes a redskin from the DB.

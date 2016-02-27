@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing panther in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Panther.findById(req.params.id, function (err, panther) {
+//     if (err) { return handleError(res, err); }
+//     if(!panther) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(panther, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(panther);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Panther.findById(req.params.id, function (err, panther) {
-    if (err) { return handleError(res, err); }
-    if(!panther) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(panther, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(panther);
+  Panther.findOne({_id: req.params.id}, function (err, panther){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          panther.replies = req.body.replies;
+          panther.save();
+       }
     });
-  });
 };
 
 // Deletes a panther from the DB.

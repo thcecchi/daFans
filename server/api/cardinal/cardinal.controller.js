@@ -28,18 +28,30 @@ exports.create = function(req, res) {
   });
 };
 
-// Updates an existing cardinal in the DB.
+// // Updates an existing cardinal in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Cardinal.findById(req.params.id, function (err, cardinal) {
+//     if (err) { return handleError(res, err); }
+//     if(!cardinal) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(cardinal, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(cardinal);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Cardinal.findById(req.params.id, function (err, cardinal) {
-    if (err) { return handleError(res, err); }
-    if(!cardinal) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(cardinal, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(cardinal);
+  Cardinal.findOne({_id: req.params.id}, function (err, cardinal){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          cardinal.replies = req.body.replies;
+          cardinal.save();
+       }
     });
-  });
 };
 
 // Deletes a cardinal from the DB.

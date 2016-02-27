@@ -6,6 +6,8 @@
 
   .teamsList {
     padding-top: 5%;
+    display: block;
+    width: 100%;
   }
 
   ul {
@@ -26,7 +28,6 @@
 .header-copy {
   display: inline-block;
 }
-
 
 button {
   margin-top: 2%;
@@ -103,7 +104,7 @@ button {
 
 .form-container, .reply-container {
   z-index: 999;
-  background: #F2F1EF;
+  background: #FB4F14;
   overflow: hidden;
   border-radius: 3px;
   position: absolute;

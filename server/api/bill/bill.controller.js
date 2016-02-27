@@ -28,18 +28,30 @@ exports.create = function(req, res) {
   });
 };
 
-// Updates an existing bill in the DB.
+// // Updates an existing bill in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Bill.findById(req.params.id, function (err, bill) {
+//     if (err) { return handleError(res, err); }
+//     if(!bill) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(bill, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(bill);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Bill.findById(req.params.id, function (err, bill) {
-    if (err) { return handleError(res, err); }
-    if(!bill) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(bill, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(bill);
+  Bill.findOne({_id: req.params.id}, function (err, bill){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          bill.replies = req.body.replies;
+          bill.save();
+       }
     });
-  });
 };
 
 // Deletes a bill from the DB.

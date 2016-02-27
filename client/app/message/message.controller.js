@@ -26,6 +26,11 @@ angular.module('daFansApp')
       element.scrollTop = element.scrollHeight;
       console.log('bottom of message-box!')
     }
+    // $('#subnav').offcanvas(toggle);
+
+    $scope.hideNav = function () {
+      $('#subnav').offcanvas('toggle');
+    }
 
     $rootScope.arrangeComments = function (comments) {
       for (var i = 0; i < comments.length; i++){
@@ -34,6 +39,7 @@ angular.module('daFansApp')
           $scope.localMessages.push(comments[i])
         }
       }
+        $scope.localMessages.reverse();
     }
 
     $scope.addMessage = function () {
@@ -45,9 +51,7 @@ angular.module('daFansApp')
                                        loc: $rootScope.city,
                                        time: new Date(),
                                        replies: []
-                                     }).then(function () {
-                                       $rootScope.startAtBottom()
-                                     });
+                                     })
       $scope.newMessage = '';
       $scope.revealForm();
     };
@@ -70,7 +74,6 @@ angular.module('daFansApp')
         messageService.updateReplies(messageId, replyResponse, newReplyData);
       }).then(function () {
            socket.syncUpdates(thisTeamSing, $scope.localMessages)
-           $rootScope.startAtBottom()
          });
       $scope.newReply = '';
       $scope.revealReplyForm();
@@ -85,8 +88,6 @@ angular.module('daFansApp')
     };
 
     $scope.revealForm = function () {
-      $rootScope.startAtBottom()
-
       if($('.reply-container').hasClass('active')) {
         $scope.revealReplyForm()
       }
@@ -100,7 +101,6 @@ angular.module('daFansApp')
 
     $scope.revealReplyForm = function (commentId) {
       $rootScope.replyId = commentId
-      $rootScope.startAtBottom()
       $('.reply-container').toggleClass('active');
       $('.plus-icon').toggleClass('active');
       $('#message-box').toggleClass('faded');

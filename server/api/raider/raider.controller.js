@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing raider in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Raider.findById(req.params.id, function (err, raider) {
+//     if (err) { return handleError(res, err); }
+//     if(!raider) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(raider, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(raider);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Raider.findById(req.params.id, function (err, raider) {
-    if (err) { return handleError(res, err); }
-    if(!raider) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(raider, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(raider);
+  Raider.findOne({_id: req.params.id}, function (err, raider){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          raider.replies = req.body.replies;
+          raider.save();
+       }
     });
-  });
 };
 
 // Deletes a raider from the DB.

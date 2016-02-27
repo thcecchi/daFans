@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing bronco in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Bronco.findById(req.params.id, function (err, bronco) {
+//     if (err) { return handleError(res, err); }
+//     if(!bronco) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(bronco, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(bronco);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Bronco.findById(req.params.id, function (err, bronco) {
-    if (err) { return handleError(res, err); }
-    if(!bronco) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(bronco, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(bronco);
+  Bronco.findOne({_id: req.params.id}, function (err, bronco){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          bronco.replies = req.body.replies;
+          bronco.save();
+       }
     });
-  });
 };
 
 // Deletes a bronco from the DB.

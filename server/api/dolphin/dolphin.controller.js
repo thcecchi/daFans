@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing dolphin in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Dolphin.findById(req.params.id, function (err, dolphin) {
+//     if (err) { return handleError(res, err); }
+//     if(!dolphin) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(dolphin, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(dolphin);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Dolphin.findById(req.params.id, function (err, dolphin) {
-    if (err) { return handleError(res, err); }
-    if(!dolphin) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(dolphin, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(dolphin);
+  Dolphin.findOne({_id: req.params.id}, function (err, dolphin){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          dolphin.replies = req.body.replies;
+          dolphin.save();
+       }
     });
-  });
 };
 
 // Deletes a dolphin from the DB.

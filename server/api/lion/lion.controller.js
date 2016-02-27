@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing lion in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Lion.findById(req.params.id, function (err, lion) {
+//     if (err) { return handleError(res, err); }
+//     if(!lion) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(lion, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(lion);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Lion.findById(req.params.id, function (err, lion) {
-    if (err) { return handleError(res, err); }
-    if(!lion) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(lion, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(lion);
+  Lion.findOne({_id: req.params.id}, function (err, lion){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          lion.replies = req.body.replies;
+          lion.save();
+       }
     });
-  });
 };
 
 // Deletes a lion from the DB.

@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing jet in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Jet.findById(req.params.id, function (err, jet) {
+//     if (err) { return handleError(res, err); }
+//     if(!jet) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(jet, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(jet);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Jet.findById(req.params.id, function (err, jet) {
-    if (err) { return handleError(res, err); }
-    if(!jet) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(jet, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(jet);
+  Jet.findOne({_id: req.params.id}, function (err, jet){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          jet.replies = req.body.replies;
+          jet.save();
+       }
     });
-  });
 };
 
 // Deletes a jet from the DB.

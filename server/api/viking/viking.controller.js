@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing viking in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Viking.findById(req.params.id, function (err, viking) {
+//     if (err) { return handleError(res, err); }
+//     if(!viking) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(viking, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(viking);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Viking.findById(req.params.id, function (err, viking) {
-    if (err) { return handleError(res, err); }
-    if(!viking) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(viking, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(viking);
+  Viking.findOne({_id: req.params.id}, function (err, viking){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          viking.replies = req.body.replies;
+          viking.save();
+       }
     });
-  });
 };
 
 // Deletes a viking from the DB.

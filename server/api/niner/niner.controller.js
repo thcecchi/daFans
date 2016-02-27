@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing niner in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Niner.findById(req.params.id, function (err, niner) {
+//     if (err) { return handleError(res, err); }
+//     if(!niner) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(niner, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(niner);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Niner.findById(req.params.id, function (err, niner) {
-    if (err) { return handleError(res, err); }
-    if(!niner) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(niner, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(niner);
+  Niner.findOne({_id: req.params.id}, function (err, niner){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          niner.replies = req.body.replies;
+          niner.save();
+       }
     });
-  });
 };
 
 // Deletes a niner from the DB.

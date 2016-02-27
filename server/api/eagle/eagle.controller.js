@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing eagle in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Eagle.findById(req.params.id, function (err, eagle) {
+//     if (err) { return handleError(res, err); }
+//     if(!eagle) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(eagle, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(eagle);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Eagle.findById(req.params.id, function (err, eagle) {
-    if (err) { return handleError(res, err); }
-    if(!eagle) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(eagle, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(eagle);
+  Eagle.findOne({_id: req.params.id}, function (err, eagle){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          eagle.replies = req.body.replies;
+          eagle.save();
+       }
     });
-  });
 };
 
 // Deletes a eagle from the DB.

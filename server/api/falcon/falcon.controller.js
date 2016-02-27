@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing falcon in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Falcon.findById(req.params.id, function (err, falcon) {
+//     if (err) { return handleError(res, err); }
+//     if(!falcon) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(falcon, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(falcon);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Falcon.findById(req.params.id, function (err, falcon) {
-    if (err) { return handleError(res, err); }
-    if(!falcon) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(falcon, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(falcon);
+  Falcon.findOne({_id: req.params.id}, function (err, falcon){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          falcon.replies = req.body.replies;
+          falcon.save();
+       }
     });
-  });
 };
 
 // Deletes a falcon from the DB.

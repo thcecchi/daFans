@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing giant in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Giant.findById(req.params.id, function (err, giant) {
+//     if (err) { return handleError(res, err); }
+//     if(!giant) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(giant, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(giant);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Giant.findById(req.params.id, function (err, giant) {
-    if (err) { return handleError(res, err); }
-    if(!giant) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(giant, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(giant);
+  Giant.findOne({_id: req.params.id}, function (err, giant){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          giant.replies = req.body.replies;
+          giant.save();
+       }
     });
-  });
 };
 
 // Deletes a giant from the DB.

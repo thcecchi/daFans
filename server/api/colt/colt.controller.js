@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing colt in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Colt.findById(req.params.id, function (err, colt) {
+//     if (err) { return handleError(res, err); }
+//     if(!colt) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(colt, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(colt);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Colt.findById(req.params.id, function (err, colt) {
-    if (err) { return handleError(res, err); }
-    if(!colt) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(colt, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(colt);
+  Colt.findOne({_id: req.params.id}, function (err, colt){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          colt.replies = req.body.replies;
+          colt.save();
+       }
     });
-  });
 };
 
 // Deletes a colt from the DB.

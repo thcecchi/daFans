@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing ram in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Ram.findById(req.params.id, function (err, ram) {
+//     if (err) { return handleError(res, err); }
+//     if(!ram) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(ram, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(ram);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Ram.findById(req.params.id, function (err, ram) {
-    if (err) { return handleError(res, err); }
-    if(!ram) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(ram, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(ram);
+  Ram.findOne({_id: req.params.id}, function (err, ram){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          ram.replies = req.body.replies;
+          ram.save();
+       }
     });
-  });
 };
 
 // Deletes a ram from the DB.

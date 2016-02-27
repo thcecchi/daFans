@@ -29,17 +29,29 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing saint in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Saint.findById(req.params.id, function (err, saint) {
+//     if (err) { return handleError(res, err); }
+//     if(!saint) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(saint, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(saint);
+//     });
+//   });
+// };
+
+// THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Saint.findById(req.params.id, function (err, saint) {
-    if (err) { return handleError(res, err); }
-    if(!saint) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(saint, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(saint);
+  Saint.findOne({_id: req.params.id}, function (err, saint){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          saint.replies = req.body.replies;
+          saint.save();
+       }
     });
-  });
 };
 
 // Deletes a saint from the DB.
