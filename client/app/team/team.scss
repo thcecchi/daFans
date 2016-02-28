@@ -158,6 +158,10 @@
 // team styles
 .Bengals  {
 
+  &#message-editor {
+    border: 1px solid #FB4F14;
+  }
+
   &.hero-unit  {
     // border-bottom: 1px solid #FB4F14;
     color: #FB4F14;
@@ -166,7 +170,7 @@
   &#submit-btn {
 
     &:hover {
-      color: 2px solid #FB4F14;
+      color: #FB4F14;
     }
   }
 
@@ -184,6 +188,10 @@
 }
 
 .Ravens  {
+
+  &#message-editor {
+    border: 1px solid #241773;
+  }
 
   &.hero-unit  {
     color: #241773;
@@ -211,6 +219,10 @@
 
 .Browns  {
 
+  &#message-editor {
+    border: 1px solid #FB4F14;
+  }
+
   &.hero-unit  {
     color: #FB4F14;
   }
@@ -236,6 +248,10 @@
 }
 
 .Bears  {
+
+  &#message-editor {
+    border: 1px solid #0B162A;
+  }
 
   &.hero-unit  {
     color: #0B162A;
@@ -263,6 +279,10 @@
 
 .Steelers  {
 
+  &#message-editor {
+    border: 1px solid #FFB612;
+  }
+
   &.hero-unit  {
     color: #FFB612;
   }
@@ -288,6 +308,10 @@
 }
 
 .Lions  {
+
+  &#message-editor {
+    border: 1px solid #005A8B;
+  }
 
   &.hero-unit  {
     color: #005A8B;
@@ -315,6 +339,10 @@
 
 .Packers  {
 
+  &#message-editor {
+    border: 1px solid #203731;
+  }
+
   &.hero-unit  {
     color: #203731;
   }
@@ -341,8 +369,11 @@
 
 .Vikings  {
 
+  &#message-editor {
+    border: 1px solid #4F2683;
+  }
+
   &.hero-unit  {
-    background: #4F2683;
     color: #4F2683;
   }
 
@@ -367,6 +398,10 @@
 }
 
 .Texans  {
+
+  &#message-editor {
+    border: 1px solid #A71930;
+  }
 
   &.hero-unit  {
     color: #A71930;
@@ -394,6 +429,10 @@
 
 .Colts  {
 
+  &#message-editor {
+    border: 1px solid #002C5F;
+  }
+
   &.hero-unit  {
     color: #002C5F;
   }
@@ -419,6 +458,10 @@
 }
 
 .Jaguars  {
+
+  &#message-editor {
+    border: 1px solid #006778;
+  }
 
   &.hero-unit  {
     color: #006778;
@@ -446,6 +489,10 @@
 
 .Titans  {
 
+  &#message-editor {
+    border: 1px solid #4B92DB;
+  }
+
   &.hero-unit  {
     color: #4B92DB;
   }
@@ -471,6 +518,10 @@
 }
 
 .Falcons  {
+
+  &#message-editor {
+    border: 1px solid #A71930;
+  }
 
   &.hero-unit  {
     color: #A71930;
@@ -498,6 +549,10 @@
 
 .Panthers  {
 
+  &#message-editor {
+    border: 1px solid #0085CA;
+  }
+
   &.hero-unit  {
     color: #0085CA;
   }
@@ -523,6 +578,10 @@
 }
 
 .Saints  {
+
+  &#message-editor {
+    border: 1px solid #9F8958;
+  }
 
   &.hero-unit  {
     color: #9F8958;
@@ -550,6 +609,10 @@
 
 .Bucs  {
 
+  &#message-editor {
+    border: 1px solid #D50A0A;
+  }
+
   &.hero-unit  {
     color: #D50A0A;
   }
@@ -575,6 +638,10 @@
 }
 
 .Bills  {
+
+  &#message-editor {
+    border: 1px solid #00338D;
+  }
 
   &.hero-unit  {
     color: #00338D;
@@ -602,6 +669,10 @@
 
 .Dolphins  {
 
+  &#message-editor {
+    border: 1px solid #008E97;
+  }
+
   &.hero-unit  {
     color: #008E97;
   }
@@ -627,6 +698,10 @@
 }
 
 .Patriots  {
+
+  &#message-editor {
+    border: 1px solid #002244;
+  }
 
   &.hero-unit  {
     color: #002244;
@@ -654,6 +729,10 @@
 
 .Jets  {
 
+  &#message-editor {
+    border: 1px solid #203731;
+  }
+
   &.hero-unit  {
     color: #203731;
   }
@@ -679,6 +758,10 @@
 }
 
 .Cowboys  {
+
+  &#message-editor {
+    border: 1px solid #002244;
+  }
 
   &.hero-unit  {
     color: #002244;
@@ -706,6 +789,10 @@
 
 .Giants  {
 
+  &#message-editor {
+    border: 1px solid #0B2265;
+  }
+
   &.hero-unit  {
     color: #0B2265;
   }
@@ -731,6 +818,10 @@
 }
 
 .Eagles  {
+
+  &#message-editor {
+    border: 1px solid #004953;
+  }
 
   &.hero-unit  {
     color: #004953;
@@ -758,6 +849,10 @@
 
 .Redskins  {
 
+  &#message-editor {
+    border: 1px solid #773141;
+  }
+
   &.hero-unit  {
     color: #773141;
   }
@@ -783,6 +878,10 @@
 }
 
 .Broncos  {
+
+  &#message-editor {
+    border: 1px solid #FB4F14;
+  }
 
   &.hero-unit  {
     color: #FB4F14;
@@ -810,6 +909,10 @@
 
 .Chiefs  {
 
+  &#message-editor {
+    border: 1px solid #E31837;
+  }
+
   &.hero-unit  {
     color: #E31837;
   }
@@ -836,6 +939,10 @@
 
 .Raiders  {
 
+  &#message-editor {
+    border: 1px solid #000;
+  }
+
   &.hero-unit  {color: #000;
   }
 
@@ -858,6 +965,10 @@
 }
 
 .Chargers  {
+
+  &#message-editor {
+    border: 1px solid #0073CF;
+  }
 
   &.hero-unit  {
     color: #0073CF;
@@ -885,6 +996,10 @@
 
 .Cardinals  {
 
+  &#message-editor {
+    border: 1px solid #97233F;
+  }
+
   &.hero-unit  {
     color: #97233F;
   }
@@ -910,6 +1025,10 @@
 }
 
 .Niners  {
+
+  &#message-editor {
+    border: 1px solid #AA0000;
+  }
 
   &.hero-unit  {
     color: #AA0000;
@@ -937,6 +1056,10 @@
 
 .Seahawks  {
 
+  &#message-editor {
+    border: 1px solid #69BE28;
+  }
+
   &.hero-unit  {
     color: #69BE28;
   }
@@ -962,6 +1085,10 @@
 }
 
 .Rams  {
+
+  &#message-editor {
+    border: 1px solid #B3995D;
+  }
 
   &.hero-unit  {
     color: #B3995D;

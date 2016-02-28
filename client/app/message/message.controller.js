@@ -26,7 +26,6 @@ angular.module('daFansApp')
       element.scrollTop = element.scrollHeight;
       console.log('bottom of message-box!')
     }
-    // $('#subnav').offcanvas(toggle);
 
     $scope.hideNav = function () {
       $('#subnav').offcanvas('toggle');

@@ -29,17 +29,28 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing bear in the DB.
+// exports.update = function(req, res) {
+//   if(req.body._id) { delete req.body._id; }
+//   Bear.findById(req.params.id, function (err, bear) {
+//     if (err) { return handleError(res, err); }
+//     if(!bear) { return res.status(404).send('Not Found'); }
+//     var updated = _.merge(bear, req.body);
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//       return res.status(200).json(bear);
+//     });
+//   });
+// };
+
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Bear.findById(req.params.id, function (err, bear) {
-    if (err) { return handleError(res, err); }
-    if(!bear) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(bear, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(bear);
+  Bear.findOne({_id: req.params.id}, function (err, bear){
+       if (err) {
+          res.send(422,'update failed');
+       } else {
+          bear.replies = req.body.replies;
+          bear.save();
+       }
     });
-  });
 };
 
 // Deletes a bear from the DB.
