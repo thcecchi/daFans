@@ -44,7 +44,7 @@ exports.create = function(req, res) {
 
 // THIS WILL UPDATE JUST THE REPLIES PROPERTY
 exports.update = function(req, res) {
-  Bengal.findOne({_id: req.params.id}, function (err, chief){
+  Chief.findOne({_id: req.params.id}, function (err, chief){
        if (err) {
           res.send(422,'update failed');
        } else {
