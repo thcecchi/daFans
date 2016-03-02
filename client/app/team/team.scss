@@ -17,6 +17,8 @@
     font-family: 'Roboto Slab', sans-serif;
     letter-spacing: .5px;
     cursor: pointer;
+    padding-right: 1%;
+    text-align: left;
   }
 
   .header-copy {
@@ -113,6 +115,7 @@
 
 #teams-list {
   list-style-type: none;
+  padding: 0;
 
   li {
     margin-bottom: 20px;
