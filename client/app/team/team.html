@@ -23,8 +23,8 @@
     <div class="col-md-12">
       <div class="teamsList" ng-controller="TeamCtrl">
         <ul id="teams-list">
-          <li class="col-md-4" ng-repeat="team in this.allTeams">
-            <a href="/team/{{team.teamId}}"><img class="team-logo" src="assets/nfl_logos/{{team.img}}" alt="{{team.teamId}}"><h4 class="home-team-name">{{team.name}}</h4></a>
+          <li class="col-md-4 {{this.team.teamId}}" ng-repeat="team in this.allTeams">
+            <a href="/team/{{team.teamId}}"><h3 class="home-team-name">{{team.name}}</h3></a>
           </li>
         </ul>
       </div>

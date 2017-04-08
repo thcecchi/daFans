@@ -34,6 +34,7 @@
   #message-button {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     display: inline-block;
+    outline: none;
     // width: 100%;
     height: 100%;
     border-radius: 3px;
@@ -108,7 +109,7 @@
 
 .hero-unit {
     // position: relative;
-    color: #000;
+    // color: #000;
     text-align: center;
     // text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
@@ -118,7 +119,7 @@
   padding: 0;
 
   li {
-    margin-bottom: 20px;
+    padding: 40px 0;
 
     &:hover .team-logo {
         transform: translateY(-5px);
@@ -137,11 +138,12 @@
     }
 
     .home-team-name {
-      color: #000;
+      display: block;
+      margin-top: 20px;
       text-align: center;
       font-weight: 300;
       font-family: 'Roboto', sans-serif;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       text-decoration: none;
     }
   }
@@ -166,7 +168,6 @@
   }
 
   &.hero-unit  {
-    // border-bottom: 1px solid #FB4F14;
     color: #FB4F14;
   }
 
@@ -223,22 +224,22 @@
 .Browns  {
 
   &#message-editor {
-    border: 1px solid #FB4F14;
+    border: 1px solid #eb3300;
   }
 
   &.hero-unit  {
-    color: #FB4F14;
+    color: #eb3300;
   }
 
   &#submit-btn {
 
     &:hover {
-      color: #FB4F14;
+      color: #eb3300;
     }
   }
 
   &#message-button {
-    border: 2px solid #FB4F14;
+    border: 2px solid #eb3300;
   }
 
   &.message-item {
@@ -246,7 +247,7 @@
   }
 
   &.plus-icon {
-    color: #FB4F14;
+    color: #eb3300;
   }
 }
 
@@ -1129,4 +1130,262 @@
   #banner {
     margin-bottom: 20px;
   }
+}
+///////////////////
+// Home team style
+///////////////////
+.bengals  {
+    background: #FB4F14;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.ravens  {
+    background: #241773;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.browns  {
+    background: #eb3300;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.bears  {
+    background: #0B162A;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.steelers  {
+    background: #FFB612;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.lions  {
+    background: #005A8B;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.packers  {
+    background: #203731;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.vikings  {
+    background: #4F2683;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.texans  {
+    background: #A71930;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.colts  {
+    background: #002C5F;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.jaguars  {
+    background: #006778;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.titans  {
+    background: #4B92DB;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.falcons  {
+    background: #A71930;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.panthers  {
+    background: #0085CA;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.saints  {
+    background: #9F8958;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.bucs  {
+  background: #D50A0A;
+
+  & a {
+    color: #fff;
+  }
+}
+
+.bills  {
+    background: #00338D;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.dolphins  {
+    background: #008E97;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.patriots  {
+    background: #002244;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.jets  {
+    background: #203731;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.cowboys  {
+    background: #002244;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.giants  {
+    background: #0B2265;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.eagles  {
+    background: #004953;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.redskins  {
+    background: #773141;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.broncos  {
+    background: #FB4F14;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.chiefs  {
+    background: #E31837;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.raiders  {
+    background: #000;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.chargers  {
+    background: #0073CF;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.cardinals  {
+    background: #97233F;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.niners  {
+    background: #AA0000;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.seahawks  {
+    background: #69BE28;
+
+    & a {
+      color: #fff;
+    }
+}
+
+.rams  {
+    background: #B3995D;
+
+    & a {
+      color: #fff;
+    }
 }

@@ -72,7 +72,6 @@ angular.module('daFansApp', [
               geoService.getLocationStats(lat, lng).success(function(data) {
                 $("#loading-screen").addClass('hide')
                 $rootScope.city = data.results[0].address_components[3].short_name
-                console.log($rootScope.city)
               })
             })
 

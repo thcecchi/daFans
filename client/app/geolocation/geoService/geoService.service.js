@@ -18,8 +18,6 @@ angular.module('daFansApp')
             getCoords(lat, lng).success(function(data) {
               // $("#loading-screen").addClass('hide')
               $rootScope.city = data.results[0].address_components[3].short_name
-              console.log($rootScope.city)
-              console.log(thisTeam)
             })
           }).then(function() {
             $http.get('/api/' + thisTeam).success(function(allMessages) {
@@ -27,7 +25,6 @@ angular.module('daFansApp')
 
               $rootScope.arrangeComments(allMessages)
               socket.syncUpdates(thisTeamSing, $rootScope.localMessages)
-              console.log($rootScope.localMessages)
               $rootScope.startAtBottom()
             }).finally(function() {
               $("#loading-screen").addClass('hide')

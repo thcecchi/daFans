@@ -141,12 +141,12 @@ angular.module('daFansApp')
                   "img": "chiefs.svg"
                 },
                 {
-                  "name":"Oakland Raiders",
+                  "name":"Las Vegas Raiders",
                   "teamId":"raiders",
                   "img": "raiders.svg"
                 },
                 {
-                  "name":"San Diego Chargers",
+                  "name":"Los Angeles Chargers",
                   "teamId":"chargers",
                   "img": "chargers.svg"
                 },
@@ -166,7 +166,7 @@ angular.module('daFansApp')
                   "img": "seahawks.svg"
                 },
                 {
-                  "name":"St. Louis Rams",
+                  "name":"Los Angeles Rams",
                   "teamId":"rams",
                   "img": "rams.svg"
                 }]

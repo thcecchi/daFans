@@ -10,15 +10,12 @@ angular.module('daFansApp')
     }
 
     var updateMessage = function (replyNumber, currentResponse, newData) {
-      console.log(currentResponse)
       var newRepl = currentResponse.replies.concat(newData);
-      console.log(newRepl)
       // currentResponse.replies = newRepl
       Object.defineProperty(currentResponse, 'replies', {
         value: newRepl
       })
       // var extendedReply = _.extend(currentResponse, newRepl);
-      console.log(currentResponse)
 
       return $http.put('/api/' + thisTeam + '/' + replyNumber, currentResponse);
     }

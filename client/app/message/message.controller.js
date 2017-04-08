@@ -17,14 +17,12 @@ angular.module('daFansApp')
       $http.get('/api/' + thisTeam).success(function(allMessages) {
         $scope.arrangeComments(allMessages)
         socket.syncUpdates(thisTeamSing, $scope.localMessages)
-        console.log($scope.localMessages)
       })
     }
 
     $rootScope.startAtBottom = function () {
       var element = document.getElementById("message-box");
       element.scrollTop = element.scrollHeight;
-      console.log('bottom of message-box!')
     }
 
     $scope.hideNav = function () {
@@ -33,7 +31,6 @@ angular.module('daFansApp')
 
     $rootScope.arrangeComments = function (comments) {
       for (var i = 0; i < comments.length; i++){
-        console.log(comments[i].loc)
         if (comments[i].loc == $rootScope.city && comments[i].time > lastWeek) {
           $scope.localMessages.push(comments[i])
         }
@@ -45,7 +42,6 @@ angular.module('daFansApp')
       if($scope.newMessage === '') {
         return;
       }
-      console.log($rootScope.city)
       $http.post('/api/' + thisTeam, { message: $scope.newMessage,
                                        loc: $rootScope.city,
                                        time: new Date(),
@@ -107,7 +103,6 @@ angular.module('daFansApp')
 
     $scope.deleteMessage = function (message) {
       if (message.time > moment().diff('days'))
-      console.log()
       $http.delete('/api/messages/' + message._id);
     };
 
